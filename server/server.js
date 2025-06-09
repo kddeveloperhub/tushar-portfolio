@@ -6,13 +6,18 @@ const nodemailer = require('nodemailer');
 dotenv.config();
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors());
+// Replace this with your actual frontend URL deployed on Netlify
+const FRONTEND_URL = 'https://68458fa88cd9ee608d4e9a8e--tushar-webdev.netlify.app';
+
+app.use(cors({
+  origin: FRONTEND_URL, // only allow your frontend domain to access
+  methods: ['POST'],    // allow POST requests
+}));
+
 app.use(express.json());
 
-// Routes
 app.post('/contact', async (req, res) => {
   const { name, email, message } = req.body;
 
@@ -30,9 +35,9 @@ app.post('/contact', async (req, res) => {
     });
 
     const mailOptions = {
-      from: `"${name}" <${process.env.EMAIL_USER}>`, // Shows user's name with your Gmail
-      to: process.env.EMAIL_USER,                    // You receive the email
-      replyTo: email,                                // ✅ Reply goes to the user's email
+      from: `"${name}" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER,
+      replyTo: email,
       subject: `New Contact from ${name}`,
       text: `You received a new message from your portfolio contact form:\n\n` +
             `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
@@ -48,5 +53,5 @@ app.post('/contact', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });

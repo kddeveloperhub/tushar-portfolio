@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -10,30 +9,34 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSending(true);
-    setStatus('');
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setSending(true);
+  setStatus('');
 
-    emailjs
-      .send(
-        'service_0512u7s', // ✅ Your service ID
-        'template_zonmk1p', // ✅ Your template ID
-        form,
-        'TYMUkjPx-UEgjPAJM' // ✅ Your public key
-      )
-      .then(
-        () => {
-          setStatus('✅ Message sent successfully!');
-          setForm({ name: '', email: '', message: '' });
-        },
-        (error) => {
-          console.error(error);
-          setStatus('❌ Failed to send message. Please try again.');
-        }
-      )
-      .finally(() => setSending(false));
-  };
+  try {
+    const response = await fetch('https://tushar-portfolio-4ael.onrender.com/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(form),
+    });
+
+    if (response.ok) {
+      setStatus('✅ Message sent successfully!');
+      setForm({ name: '', email: '', message: '' });
+    } else {
+      const data = await response.json();
+      setStatus(`❌ Failed to send message: ${data.error || 'Unknown error'}`);
+    }
+  } catch (error) {
+    setStatus('❌ Failed to send message. Please try again.');
+  } finally {
+    setSending(false);
+  }
+};
+
 
   return (
     <section id="contact" className="my-20 px-4 max-w-lg mx-auto text-white">

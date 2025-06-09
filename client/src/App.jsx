@@ -8,17 +8,19 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
-import Pricing from './pages/Pricing'; // ✅ Add this
+import Pricing from './pages/Pricing';
+import Testimonials from './pages/Testimonials'; // ✅ NEW
 
 function HomePage() {
   return (
     <>
       <Hero />
-  <About />
-  <Services />
-  <Projects />
-  <Pricing />  {/* ← Added here */}
-  <Contact />
+      <About />
+      <Services />
+      <Projects />
+      <Pricing />
+       <Testimonials />
+      <Contact />
     </>
   );
 }
@@ -36,6 +38,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/pricing" element={<Pricing />} />
+            <Route path="/testimonials" element={<Testimonials />} /> {/* ✅ New Route */}
           </Routes>
         </main>
 
