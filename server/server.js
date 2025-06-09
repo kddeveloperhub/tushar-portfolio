@@ -9,12 +9,24 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Replace this with your actual frontend URL deployed on Netlify
-const FRONTEND_URL = 'https://68458fa88cd9ee608d4e9a8e--tushar-webdev.netlify.app';
+const FRONTEND_URL = 'https://tushar-webdev.netlify.app';
+
 
 app.use(cors({
-  origin: FRONTEND_URL, // only allow your frontend domain to access
-  methods: ['POST'],    // allow POST requests
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true); // allow server-to-server or curl
+    if (
+      origin === 'https://tushar-webdev.netlify.app' ||            // production
+      origin.endsWith('.netlify.app')                               // previews
+    ) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['POST'],
 }));
+
 
 app.use(express.json());
 
