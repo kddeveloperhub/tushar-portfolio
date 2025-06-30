@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 // Asset Imports
-import resumePng from '../assets/resume.png';
+import resumePng from '../assets/resume.jpg';
 import cert10thPdf from '../assets/certificate_10th.pdf';
 import cert12thPdf from '../assets/certificate_12th.pdf';
 import advancedWebdevCertPdf from '../assets/advanced_webdev_certificate.pdf';
