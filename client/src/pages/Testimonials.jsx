@@ -1,47 +1,39 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 import nitishImg from '../assets/nitishsharma.jpg';
-import saiImg from '../assets/saikumar.jpeg'; // Ensure this file exists
+import saiImg from '../assets/saikumar.jpeg';
 
-const testimonialCardVariant = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.2 * i,
-      duration: 0.8,
-    },
-  }),
-};
-
-const testimonialsData = [
+const testimonials = [
   {
-    name: 'Nitish Sharma',
-    title: 'Founder & CEO, Glancia AI',
     image: nitishImg,
-    quote:
+    name: 'Nitish Sharma',
+    role: 'Founder & CEO, Glancia AI',
+    text:
       '“Working with Tushar was an outstanding experience. He understood our vision for Glancia AI and brought it to life with precision and creativity. The site he developed is fast, visually striking, and professional. Highly recommended for anyone seeking top-tier web development.”',
   },
   {
-    name: 'Sai Kumar',
-    title: 'Entrepreneur, Bangalore',
     image: saiImg,
-    quote: (
+    name: 'Sai Kumar',
+    role: 'Entrepreneur, Bangalore',
+    text: (
       <>
         “Tushar did an excellent job building our company website —{' '}
         <a
-          href="https://primeappconnect.com/"
+          href="https://primeappconnect.com"
           target="_blank"
           rel="noreferrer"
-          className="text-indigo-300 underline"
+          className="text-indigo-300 underline hover:text-indigo-400 transition"
         >
           PrimeAppConnect
         </a>
-        . He was quick to understand our requirements and delivered a sleek,
-        functional, and modern website that exceeded our expectations. Very
-        responsive and easy to work with — I’d definitely recommend him to
-        anyone looking for a professional web developer.”
+        . He quickly understood our needs and delivered a sleek, professional,
+        and fast-loading website. Very reliable and communicative throughout the
+        project.”
       </>
     ),
   },
@@ -51,52 +43,50 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="text-white px-4 py-16 flex flex-col items-center justify-center"
-      style={{ backgroundColor: 'rgb(0, 0, 18)' }}
+      className="bg-[#000012] text-white px-4 py-20 text-center"
     >
-      {/* Heading */}
-      <motion.h2
-        className="text-4xl font-bold mb-12 text-center text-indigo-400"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        Testimonials
-      </motion.h2>
+      <h2 className="text-4xl font-bold mb-12 text-indigo-400">Testimonials</h2>
 
-      {/* Testimonials List */}
-      <div className="flex flex-col gap-12 w-full items-center">
-        {testimonialsData.map((testimonial, index) => (
-          <motion.div
-            key={testimonial.name}
-            className="max-w-3xl bg-gray-800 p-8 rounded-2xl shadow-xl text-center"
-            custom={index}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={testimonialCardVariant}
-          >
-            <motion.img
-              src={testimonial.image}
-              alt={testimonial.name}
-              className="w-28 h-28 mx-auto mb-6 rounded-full border-4 border-indigo-500 shadow-lg object-cover"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: 'spring', stiffness: 200 }}
-            />
-            <h3 className="text-2xl font-bold mb-1">{testimonial.name}</h3>
-            <p className="text-indigo-400 mb-6 font-medium">
-              {testimonial.title}
-            </p>
-            <motion.p
-              className="text-lg leading-relaxed italic text-gray-300"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1 }}
-            >
-              {testimonial.quote}
-            </motion.p>
-          </motion.div>
-        ))}
+      <div className="max-w-6xl mx-auto">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          speed={500}
+          loop={true}
+          centeredSlides={true} // ✅ This centers the slides
+          spaceBetween={30}
+          slidesPerView={1}
+          breakpoints={{
+            768: { slidesPerView: 1 },
+            1024: { slidesPerView: 2 },
+          }}
+        >
+          {testimonials.map((t, idx) => (
+            <SwiperSlide key={idx} className="flex justify-center">
+              <div className="backdrop-blur-sm bg-white/5 border border-white/10 text-left p-6 rounded-3xl shadow-xl w-full max-w-md hover:shadow-2xl transition duration-300 ease-in-out">
+                <div className="flex flex-col items-center gap-4">
+                  <img
+                    src={t.image}
+                    alt={t.name}
+                    className="w-24 h-24 rounded-full border-4 border-indigo-500 shadow-md object-cover"
+                  />
+                  <div className="text-center">
+                    <h3 className="text-xl font-semibold">{t.name}</h3>
+                    <p className="text-indigo-400 text-sm mb-4">{t.role}</p>
+                    <p className="text-gray-300 text-base italic leading-relaxed">
+                      {t.text}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );
