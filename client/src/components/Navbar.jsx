@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/Untitled-1.jpg';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const menuItems = ['Home', 'About', 'Services', 'Projects', 'Pricing', 'Testimonials', 'Contact'];
+
   return (
     <nav className="fixed top-0 w-full bg-[rgb(18,18,62)] backdrop-blur-md z-50">
       <div className="container mx-auto px-4 flex items-center justify-between h-24">
         <div className="flex items-center">
-          <img src={logo} alt="Logo" className="h-24 w-auto object-cover" />
+          <Link to="/" onClick={() => setOpen(false)}>
+            <img src={logo} alt="Logo" className="h-24 w-auto object-cover" />
+          </Link>
         </div>
 
         <button
@@ -30,14 +35,15 @@ export default function Navbar() {
             open ? 'top-24' : '-top-96'
           }`}
         >
-          {['Home', 'About', 'Services', 'Projects', 'Pricing', 'Contact'].map((item) => (
-            <li key={item} className="text-lg px-4 py-2 hover:text-indigo-400 cursor-pointer">
-              <a
-                href={item === 'Home' ? '#hero' : `#${item.toLowerCase()}`}
-                onClick={() => setOpen(false)} // close mobile menu
-              >
+          {menuItems.map((item) => (
+            <li
+              key={item}
+              className="text-lg px-4 py-2 hover:text-indigo-400 cursor-pointer"
+              onClick={() => setOpen(false)}
+            >
+              <Link to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}>
                 {item}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

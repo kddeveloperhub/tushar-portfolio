@@ -38,7 +38,7 @@ export default function Hero() {
         ></span>
 
         {/* CTA Button */}
-        <a href="#contact">
+        <a href="/contact">
           <button className="mt-4 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition font-semibold shadow-md">
             Hire Me
           </button>
