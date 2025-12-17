@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { CheckCircle2, Sparkles } from "lucide-react";
 
 const pricingPlans = [
@@ -46,94 +47,111 @@ export default function Pricing() {
   return (
     <section
       id="pricing"
-      className="py-24 bg-[rgb(0,0,18)] text-white px-4 sm:px-8 mt-28 relative overflow-hidden"
+      className="relative py-32 px-6 bg-[rgb(0,0,18)] text-white overflow-hidden"
     >
-      {/* Animated Background Glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 to-purple-800/10 blur-3xl"></div>
+      {/* Ambient Background */}
+      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-indigo-500/20 blur-[140px]" />
+      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-pink-500/20 blur-[140px]" />
 
       <div className="relative max-w-6xl mx-auto text-center">
+        {/* Header */}
         <h2 className="text-4xl sm:text-5xl font-bold mb-6 flex justify-center items-center gap-2">
-          <Sparkles className="text-indigo-400 animate-pulse" size={28} />
+          <Sparkles className="text-indigo-400" size={28} />
           Pricing Plans
         </h2>
 
-        <p className="mb-16 text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+        <p className="mb-20 text-gray-400 max-w-2xl mx-auto text-lg">
           Choose a plan that fits your vision — from a simple portfolio to a
-          fully interactive business site with premium animations.
+          fully interactive business website.
         </p>
 
-        {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-10">
-          {pricingPlans.map((plan, index) => (
-            <div
-              key={index}
-              className={`relative rounded-2xl p-8 border transition-all duration-500 flex flex-col justify-between hover:scale-105 hover:shadow-2xl ${
-                plan.highlight
-                  ? "bg-gradient-to-br from-indigo-700 via-purple-700 to-pink-600 border-none shadow-indigo-700/30"
-                  : "bg-gray-900 border-gray-800 hover:border-indigo-500/40"
-              }`}
-            >
-              {/* Tag Badge */}
-              {plan.tag && (
-                <div
-                  className={`absolute top-4 right-4 text-xs font-semibold px-3 py-1 rounded-full ${
-                    plan.highlight
-                      ? "bg-white text-indigo-700"
-                      : "bg-indigo-600 text-white"
-                  }`}
-                >
-                  {plan.tag}
+        {/* Pricing Grid */}
+        <div className="grid md:grid-cols-3 gap-10 items-stretch">
+          {pricingPlans.map((plan, index) => {
+            const fromX =
+              index === 0 ? -80 : index === 2 ? 80 : 0;
+
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40, x: fromX }}
+                whileInView={{ opacity: 1, y: 0, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                whileHover={{ y: -8 }}
+                className={`relative rounded-3xl p-8 flex flex-col
+                backdrop-blur-xl border transition-all duration-500
+                ${
+                  plan.highlight
+                    ? "bg-gradient-to-br from-indigo-600/90 via-purple-600/90 to-pink-600/90 border-transparent shadow-2xl shadow-indigo-500/30 scale-[1.03]"
+                    : "bg-white/5 border-white/10 hover:border-indigo-400/40"
+                }`}
+              >
+                {/* Tag */}
+                {plan.tag && (
+                  <span
+                    className={`absolute top-4 right-4 text-xs font-semibold px-3 py-1 rounded-full ${
+                      plan.highlight
+                        ? "bg-white text-indigo-700"
+                        : "bg-indigo-600 text-white"
+                    }`}
+                  >
+                    {plan.tag}
+                  </span>
+                )}
+
+                {/* Title & Price */}
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">
+                    {plan.title}
+                  </h3>
+
+                  <p
+                    className={`text-4xl font-extrabold mb-8 ${
+                      plan.highlight ? "text-white" : "text-indigo-400"
+                    }`}
+                  >
+                    {plan.price}
+                  </p>
+
+                  {/* Features */}
+                  <ul className="space-y-4 text-gray-300 mb-10">
+                    {plan.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <CheckCircle2
+                          size={18}
+                          className={`mt-[2px] ${
+                            plan.highlight
+                              ? "text-green-300"
+                              : "text-green-500"
+                          }`}
+                        />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              )}
 
-              {/* Title & Price */}
-              <div>
-                <h3 className="text-2xl font-bold mb-2">{plan.title}</h3>
-                <p
-                  className={`text-4xl font-extrabold mb-8 ${
-                    plan.highlight ? "text-white" : "text-indigo-400"
-                  }`}
-                >
-                  {plan.price}
-                </p>
+                {/* CTA */}
+                <a href="/contact" className="mt-auto">
+                  <button
+                    className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${
+                      plan.highlight
+                        ? "bg-white text-indigo-700 hover:bg-gray-200"
+                        : "bg-indigo-600 hover:bg-indigo-700 hover:shadow-lg hover:shadow-indigo-500/30"
+                    }`}
+                  >
+                    Get Started
+                  </button>
+                </a>
 
-                {/* Features List */}
-                <ul className="text-left space-y-4 mb-8 text-gray-300">
-                  {plan.features.map((feature, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-3 group transition"
-                    >
-                      <CheckCircle2
-                        className={`mt-[2px] ${
-                          plan.highlight
-                            ? "text-green-300"
-                            : "text-green-500/90"
-                        }`}
-                        size={18}
-                      />
-                      <span className="group-hover:text-white transition-colors">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* CTA Button */}
-              <a href="/contact" className="mt-auto">
-                <button
-                  className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 ${
-                    plan.highlight
-                      ? "bg-white text-indigo-700 hover:bg-gray-200"
-                      : "bg-indigo-600 hover:bg-indigo-700 hover:shadow-lg hover:shadow-indigo-500/30"
-                  }`}
-                >
-                  Get Started
-                </button>
-              </a>
-            </div>
-          ))}
+                {/* Soft inner glow */}
+                {plan.highlight && (
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
+                )}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

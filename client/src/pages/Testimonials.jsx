@@ -1,6 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -10,7 +11,7 @@ import nitishImg from "../assets/nitishsharma.jpg";
 import saiImg from "../assets/saikumar.jpeg";
 import subhadipImg from "../assets/Subhadip.PNG";
 
-// PDF certificate (proof of website development)
+// PDF certificate
 import nitishCertificate from "../assets/Certificate tushar dhawan.pdf";
 
 const testimonials = [
@@ -29,7 +30,8 @@ const testimonials = [
         >
           Glancia AI
         </a>
-        . He delivered a fast, professional, and visually appealing website. Later, we hired an in-house developer for updates, but the first version was entirely built by Tushar.
+        . He delivered a fast, professional, and visually appealing website.
+        The first version was entirely built by Tushar.”
       </>
     ),
     certificate: nitishCertificate,
@@ -49,7 +51,8 @@ const testimonials = [
         >
           PrimeAppConnect
         </a>
-        . He quickly understood our needs and delivered a sleek, professional, and fast-loading website. Very reliable and communicative throughout the project.”
+        . He quickly understood our needs and delivered a sleek,
+        fast-loading website.”
       </>
     ),
   },
@@ -68,7 +71,7 @@ const testimonials = [
         >
           Tuphoria
         </a>
-        . The website is user-friendly, modern, and responsive. His work as a freelancer helped our business launch a professional digital presence.”
+        . The website is modern, responsive, and user-friendly.”
       </>
     ),
   },
@@ -78,33 +81,42 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative bg-[rgb(0,0,18)] text-white px-6 py-24 overflow-hidden"
+      className="relative bg-[rgb(0,0,18)] text-white px-6 py-28 overflow-hidden"
     >
-      {/* Subtle Animated Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/30 via-purple-900/20 to-transparent blur-3xl animate-pulse"></div>
+      {/* Ambient Background */}
+      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-indigo-500/20 blur-[140px]" />
+      <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-purple-500/20 blur-[140px]" />
 
       <div className="relative max-w-6xl mx-auto text-center">
-        {/* Section Header */}
-        <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-indigo-400">
+        {/* Header */}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-4xl sm:text-5xl font-bold mb-6 text-indigo-400"
+        >
           What Clients Say
-        </h2>
-        <p className="text-gray-400 mb-16 max-w-2xl mx-auto leading-relaxed">
-          Genuine feedback from professionals and entrepreneurs who trusted me
-          to bring their digital ideas to life.
-        </p>
+        </motion.h2>
 
-        {/* Swiper Carousel */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-gray-400 mb-20 max-w-2xl mx-auto"
+        >
+          Genuine feedback from professionals who trusted me to bring their
+          digital ideas to life.
+        </motion.p>
+
+        {/* Swiper */}
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           navigation
           pagination={{ clickable: true }}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
-          speed={700}
-          loop={true}
-          centeredSlides={true}
+          autoplay={{ delay: 4500, disableOnInteraction: false }}
+          speed={800}
+          loop
+          centeredSlides
           spaceBetween={40}
           slidesPerView={1}
           breakpoints={{
@@ -112,46 +124,58 @@ export default function Testimonials() {
           }}
         >
           {testimonials.map((t, idx) => (
-            <SwiperSlide
-              key={idx}
-              className="flex justify-center transition-all duration-500 hover:scale-[1.03] hover:rotate-[0.5deg]"
-            >
-              <div className="relative group bg-gradient-to-br from-gray-900 via-gray-800/90 to-gray-900 border border-white/10 p-8 rounded-3xl shadow-lg w-full max-w-md backdrop-blur-md hover:shadow-2xl hover:shadow-indigo-600/30 transition-all duration-500 ease-out">
-                {/* Glow hover effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 rounded-3xl blur-xl transition duration-500"></div>
+            <SwiperSlide key={idx} className="flex justify-center">
+              <motion.div
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -6 }}
+                transition={{ duration: 0.5 }}
+                className="relative group w-full max-w-md"
+              >
+                {/* Card */}
+                <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-xl transition">
+                  {/* Hover Glow */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 blur-xl transition duration-500" />
 
-                <div className="relative flex flex-col items-center gap-5 text-center">
-                  <img
-                    src={t.image}
-                    alt={t.name}
-                    className="w-24 h-24 rounded-full border-4 border-indigo-500 shadow-lg object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <h3 className="text-xl font-semibold mt-2">{t.name}</h3>
-                  <p className="text-indigo-400 text-sm font-medium">{t.role}</p>
-                  <p className="text-gray-300 text-base italic leading-relaxed mt-4">
-                    {t.text}
-                  </p>
+                  <div className="relative z-10 flex flex-col items-center text-center gap-5">
+                    <img
+                      src={t.image}
+                      alt={t.name}
+                      className="w-24 h-24 rounded-full border-4 border-indigo-500 shadow-lg object-cover"
+                    />
 
-                  {/* Certificate Button */}
-                  {t.certificate && (
-                    <a
-                      href={t.certificate}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-3 px-4 py-2 bg-green-600 hover:bg-green-700 rounded-full text-white font-semibold text-sm transition transform hover:scale-105"
-                    >
-                      View Certificate
-                    </a>
-                  )}
+                    <h3 className="text-xl font-semibold">{t.name}</h3>
+                    <p className="text-indigo-400 text-sm font-medium">
+                      {t.role}
+                    </p>
+
+                    <p className="text-gray-300 italic leading-relaxed">
+                      {t.text}
+                    </p>
+
+                    {t.certificate && (
+                      <a
+                        href={t.certificate}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-3 inline-flex items-center gap-2 px-5 py-2 rounded-full
+                        bg-green-600/90 hover:bg-green-600 text-sm font-semibold
+                        transition hover:scale-105"
+                      >
+                        View Certificate
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
 
-      {/* Subtle bottom fade for depth */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
     </section>
   );
 }
