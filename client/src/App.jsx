@@ -15,13 +15,7 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <About />
-      <Services />
-      <Projects />
-      <Pricing />
-       <Testimonials />
-      <Contact />
-    </>
+          </>
   );
 }
 
@@ -46,7 +40,7 @@ function App() {
           </Routes>
         </main>
 
-        <div className="separator-animated animated-true mt-20 mb-10"></div>
+       <div className="separator-animated animated-true mt-20 mb-10"></div>
         <Footer />
       </div>
     </Router>

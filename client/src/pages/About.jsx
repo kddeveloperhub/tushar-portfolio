@@ -1,354 +1,339 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useMotionValue,
+} from "framer-motion";
+import { Link } from "react-router-dom";
+import gsap from "gsap";
 
-// 🧾 Assets
-import resumePng from '../assets/resume.jpg';
-import cert10thPdf from '../assets/certificate_10th.pdf';
-import cert12thPdf from '../assets/certificate_12th.pdf';
-import advancedWebdevCertPdf from '../assets/advanced_webdev_certificate.pdf';
-import pythonWorkshopCertPng from '../assets/python_workshop_certificate.jpg';
+// Assets
+import resumePng from "../assets/resume.jpg";
+import cert10thPdf from "../assets/certificate_10th.pdf";
+import cert12thPdf from "../assets/certificate_12th.pdf";
+import advancedWebdevCertPdf from "../assets/advanced_webdev_certificate.pdf";
+import pythonWorkshopCertPng from "../assets/python_workshop_certificate.jpg";
+
+// Experience Images (Certificates)
+import internshipCertImg from "../assets/Certificate.jpg";
+import trainingCertImg from "../assets/Tranning Certificate.jpg";
 
 export default function About() {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0 },
-  };
+  const pageRef = useRef(null);
+
+  /* ================= ROUTE TRANSITION ================= */
+  useEffect(() => {
+    gsap.fromTo(
+      pageRef.current,
+      { opacity: 0, y: 40 },
+      { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+    );
+  }, []);
+
+  /* ================= SCROLL PROGRESS ================= */
+  const { scrollYProgress } = useScroll();
+
+  /* ================= CURSOR GLOW ================= */
+  const cursorX = useMotionValue(0);
+  const cursorY = useMotionValue(0);
+
+  useEffect(() => {
+    const move = (e) => {
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
+    };
+    window.addEventListener("mousemove", move);
+    return () => window.removeEventListener("mousemove", move);
+  }, []);
+
+  /* ================= DATA ================= */
+
+  const experience = [
+    {
+      role: "Web Development Intern",
+      company: "Zidio Development",
+      duration: "April 2025 – July 2025",
+      description:
+        "Worked as a Web Development Intern where I built responsive websites, improved UI components, and contributed to real-world projects. Gained hands-on experience with modern frontend workflows, performance optimization, and professional collaboration.",
+      image: internshipCertImg,
+    },
+    {
+      role: "Web Development Trainee",
+      company: "Zidio Development",
+      duration: "April 2025 – July 2025",
+      description:
+        "Completed structured training in Web Development focusing on HTML, CSS, JavaScript, and project-based learning. Strengthened core development concepts, debugging skills, and best practices for deployment.",
+      image: trainingCertImg,
+    },
+  ];
 
   const education = [
     {
-      title: '10th Pass (2020-2021)',
-      school: 'CBSE - Alpine Public School, Bhawanigarh',
-      score: 'Percentage: 60.2%',
+      title: "10th (CBSE)",
+      institute: "Alpine Public School, Bhawanigarh",
+      year: "2020 – 2021",
+      score: "60.2%",
       cert: cert10thPdf,
-      certName: 'certificate_10th.pdf',
     },
     {
-      title: '12th Pass (2022-2023)',
-      school: 'CBSE - Satyabharti Sr. Sec. School, Jhaneri',
-      score: 'Percentage: 76.8%',
+      title: "12th (CBSE)",
+      institute: "Satyabharti Sr. Sec. School, Jhaneri",
+      year: "2022 – 2023",
+      score: "76.8%",
       cert: cert12thPdf,
-      certName: 'certificate_12th.pdf',
     },
     {
-      title: 'Bachelor of Computer Application (B.C.A)',
-      school: 'Multani Mal Modi College, Patiala',
-      score: 'Currently in 3rd Year',
+      title: "Bachelor of Computer Applications (BCA)",
+      institute: "Multani Mal Modi College, Patiala",
+      year: "Final Year",
+      score: "Ongoing",
       cert: null,
     },
   ];
 
   const certifications = [
-    {
-      title: 'Advanced Web Development and Designing Course',
-      duration: 'Duration: 6 months',
-      file: advancedWebdevCertPdf,
-      fileName: 'advanced_webdev_certificate.pdf',
-    },
-    {
-      title: 'Python Workshop Certificate',
-      duration: '',
-      file: pythonWorkshopCertPng,
-      fileName: 'python_workshop_certificate.jpg',
-    },
+    { title: "Advanced Web Development & Designing", file: advancedWebdevCertPdf },
+    { title: "Python Workshop", file: pythonWorkshopCertPng },
   ];
 
   return (
-    <section
-      id="about"
-      className="my-20 text-white text-center px-4 sm:px-6 max-w-6xl mx-auto"
+    <motion.section
+      ref={pageRef}
+      className="relative max-w-6xl mx-auto px-6 py-24 text-white overflow-hidden"
     >
-      {/* Section Header */}
+      {/* Scroll Bar */}
       <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        transition={{ staggerChildren: 0.15 }}
-        className="flex flex-col items-center"
-      >
-        <motion.button
-          variants={fadeInUp}
-          whileHover={{
-            scale: 1.1,
-            boxShadow: '0 0 20px #61dafb, 0 0 40px #61dafb',
-          }}
-          transition={{ type: 'spring', stiffness: 300 }}
-          className="text-white text-base sm:text-lg font-semibold py-2 px-6 rounded-full"
-          style={{
-            background:
-              'linear-gradient(90deg, #61dafb 0%, #0ef0ad 100%)',
-          }}
+        style={{ scaleX: scrollYProgress }}
+        className="fixed top-0 left-0 right-0 h-[3px]
+        bg-gradient-to-r from-teal-400 to-violet-500
+        origin-left z-50"
+      />
+
+      {/* Cursor Glow */}
+      <motion.div
+        className="fixed w-96 h-96 rounded-full
+        bg-violet-500/20 blur-[120px] pointer-events-none"
+        style={{ translateX: cursorX, translateY: cursorY }}
+      />
+
+      {/* Noise Overlay */}
+      <div className="noise-overlay pointer-events-none fixed inset-0 z-40" />
+
+      {/* Intro */}
+      <section className="text-center mb-28 relative z-10">
+        <motion.h1
+          whileHover={{ rotateX: 8, rotateY: -8 }}
+          className="text-5xl font-bold
+          bg-gradient-to-r from-teal-400 via-sky-400 to-violet-400
+          text-transparent bg-clip-text"
         >
           About Me
-        </motion.button>
+        </motion.h1>
 
-        <motion.h2
-          variants={fadeInUp}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold mt-10 mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#0ef0ad] to-[#61dafb]"
-        >
-          My Mission
-        </motion.h2>
+        <p className="mt-6 text-lg text-gray-300 max-w-3xl mx-auto">
+          I’m <strong>Tushar</strong>, a Web Developer, Web Designer & Graphic
+          Designer passionate about building fast, visually appealing, and
+          user-focused digital experiences.
+        </p>
+      </section>
 
-        <motion.p
-          variants={fadeInUp}
-          className="max-w-3xl text-lg leading-relaxed mb-10 text-gray-300"
-        >
-          I believe in the power of the web to transform ideas into reality.
-          My mission is to create modern, responsive, and user-friendly
-          websites that help brands stand out in the digital world.
-        </motion.p>
-      </motion.div>
+      {/* Journey */}
+      <section className="grid md:grid-cols-2 gap-10 mb-28 relative z-10">
+        <Card title="My Journey">
+          I started with curiosity about how websites work. Over time, I
+          realized that impactful digital products combine clean design,
+          strong performance, and excellent user experience.
+        </Card>
 
-      {/* Skills Section */}
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        transition={{ staggerChildren: 0.15 }}
-      >
-        <motion.h3
-          variants={fadeInUp}
-          className="text-2xl sm:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#0ef0ad] to-[#61dafb]"
-        >
-          What I Do
-        </motion.h3>
-        <motion.div
-          variants={fadeInUp}
-          className="flex flex-wrap justify-center gap-4 text-base sm:text-lg text-gray-200"
-        >
-          {[
-            'Custom Web Development',
-            'UI/UX Design',
-            'SEO Optimization',
-            'E-commerce Solutions',
-            'CMS Integration',
-          ].map((skill, i) => (
-            <span
-              key={i}
-              className="bg-[#1e1e2f] px-4 py-2 rounded-full shadow-md hover:shadow-[#0ef0ad]/40 transition"
-            >
-              {skill}
-            </span>
-          ))}
-        </motion.div>
-      </motion.div>
+        <Card title="Problems I Solve">
+          <ul className="space-y-2">
+            <li>🚀 Slow or outdated websites</li>
+            <li>🎨 Weak UI & poor user experience</li>
+            <li>📉 Low engagement & conversions</li>
+            <li>🧩 Inconsistent branding</li>
+          </ul>
+        </Card>
+      </section>
 
-      {/* Timeline Dots */}
-      <div className="relative flex items-center justify-between w-full max-w-4xl mx-auto mt-10 px-4">
-        {[...Array(5)].map((_, i) => (
-          <div key={i} className="flex items-center w-full">
-            <div
-              className="w-4 h-4 rounded-full z-10"
-              style={{ backgroundColor: '#35316f' }}
-            ></div>
-            {i < 4 && (
-              <div
-                className="flex-grow h-1"
-                style={{ backgroundColor: '#35316f' }}
-              ></div>
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/* 🎓 Education Section */}
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        transition={{ staggerChildren: 0.15 }}
-        className="mt-14"
-      >
-        <motion.h3
-          variants={fadeInUp}
-          className="text-2xl sm:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#0ef0ad] to-[#61dafb]"
-        >
-          My Education
-        </motion.h3>
-
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 px-2">
-          {education.map((edu, idx) => (
+      {/* Experience */}
+      <Section title="Experience">
+        <div className="space-y-16 max-w-5xl mx-auto">
+          {experience.map((exp, i) => (
             <motion.div
-              key={idx}
-              variants={fadeInUp}
-              className="bg-[#101020]/60 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-[#2b2b4b]"
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="grid md:grid-cols-2 gap-10 items-center"
             >
-              <h4 className="text-lg font-bold text-[#0ef0ad]">
-                {edu.title}
-              </h4>
-              <p className="mt-1 text-sm text-gray-200">{edu.school}</p>
-              <p className="mt-1 text-sm text-gray-400">{edu.score}</p>
-              {edu.cert && (
-                <a
-                  href={edu.cert}
-                  download={edu.certName}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-block bg-[#0ef0ad] text-black font-semibold px-4 py-2 rounded-full text-sm hover:scale-105 transition"
-                >
-                  📄 Download PDF
-                </a>
-              )}
+              <div className={`${i % 2 !== 0 ? "md:order-2" : ""}`}>
+                <h3 className="text-2xl font-semibold text-teal-400">
+                  {exp.role}
+                </h3>
+                <p className="text-gray-300 mt-1">{exp.company}</p>
+                <p className="text-sm text-gray-400 mt-1">{exp.duration}</p>
+                <p className="mt-4 text-gray-300 leading-relaxed">
+                  {exp.description}
+                </p>
+              </div>
+
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                className="rounded-3xl overflow-hidden
+                bg-white/5 backdrop-blur-lg
+                border border-white/10 shadow-lg"
+              >
+                <img
+                  src={exp.image}
+                  alt={exp.role}
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
             </motion.div>
           ))}
         </div>
-      </motion.div>
+      </Section>
 
-      {/* 📜 Resume Button */}
-      <motion.div
-        className="mt-10 mb-14"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <motion.a
-          href={resumePng}
-          download="Tushar_Dhawan_Resume.png"
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{
-            scale: 1.1,
-            boxShadow: '0 0 20px #0ef0ad, 0 0 40px #0ef0ad',
-          }}
-          className="inline-block px-6 py-3 rounded-full font-semibold text-black shadow-lg transition"
-          style={{
-            background:
-              'linear-gradient(90deg, #0ef0ad 0%, #61dafb 100%)',
-          }}
-        >
-          📄 Download Resume
-        </motion.a>
-      </motion.div>
+      {/* Education Timeline */}
+      <Section title="Education">
+        <div className="relative max-w-4xl mx-auto">
+          <div className="absolute left-1/2 top-0 h-full w-[2px] bg-white/10 -translate-x-1/2" />
+          <div className="space-y-16">
+            {education.map((edu, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className={`relative flex flex-col md:flex-row gap-6 ${
+                  i % 2 === 0 ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                <div className="absolute left-1/2 top-6 w-4 h-4 rounded-full
+                bg-gradient-to-r from-teal-400 to-violet-500
+                -translate-x-1/2 shadow-lg" />
 
-      {/* 🏅 Certifications */}
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        transition={{ staggerChildren: 0.15 }}
-      >
-        <motion.h3
-          variants={fadeInUp}
-          className="text-2xl sm:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#0ef0ad] to-[#61dafb]"
-        >
-          Certifications
-        </motion.h3>
+                <div className="md:w-1/2">
+                  <Card>
+                    <h4 className="font-semibold text-teal-400">{edu.title}</h4>
+                    <p className="text-sm text-gray-300">{edu.institute}</p>
+                    <p className="text-sm text-gray-400">{edu.year}</p>
+                    <p className="text-sm text-gray-400">Score: {edu.score}</p>
 
-        <div className="grid sm:grid-cols-2 gap-6 px-2">
-          {certifications.map((cert, idx) => (
-            <motion.div
-              key={idx}
-              variants={fadeInUp}
-              className="bg-[#101020]/60 backdrop-blur-sm rounded-2xl p-5 shadow-lg border border-[#2b2b4b]"
-            >
-              <h4 className="text-lg font-semibold text-white mb-2">
-                {cert.title}
-              </h4>
-              {cert.duration && (
-                <p className="text-sm text-gray-400 mb-3">
-                  {cert.duration}
-                </p>
-              )}
+                    {edu.cert && (
+                      <a
+                        href={edu.cert}
+                        download
+                        className="inline-block mt-3 text-sm text-sky-400 underline"
+                      >
+                        Download Certificate
+                      </a>
+                    )}
+                  </Card>
+                </div>
+
+                <div className="hidden md:block md:w-1/2" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Certifications */}
+      <Section title="Certifications">
+        <div className="grid sm:grid-cols-2 gap-10 max-w-3xl mx-auto">
+          {certifications.map((cert, i) => (
+            <Card key={i} center>
+              <p className="text-gray-200 mb-3">{cert.title}</p>
               <a
                 href={cert.file}
-                download={cert.fileName}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#61dafb] underline text-sm hover:text-[#0ef0ad]"
+                download
+                className="text-sky-400 underline text-sm"
               >
-                📥 Download Certificate
+                Download Certificate
               </a>
-            </motion.div>
+            </Card>
           ))}
         </div>
-      </motion.div>
+      </Section>
 
-      {/* 💡 Values */}
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        transition={{ staggerChildren: 0.15 }}
-        className="mt-14"
-      >
-        <motion.h3
-          variants={fadeInUp}
-          className="text-2xl sm:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#0ef0ad] to-[#61dafb]"
-        >
-          My Values
-        </motion.h3>
-        <motion.p
-          variants={fadeInUp}
-          className="max-w-3xl mx-auto text-lg leading-relaxed text-gray-300"
-        >
-          I value transparency, creativity, and reliability. My approach is
-          focused on delivering meaningful, lasting results — not just pretty
-          visuals.
-        </motion.p>
-      </motion.div>
-
-      {/* 💬 Why Choose Me */}
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        transition={{ staggerChildren: 0.15 }}
-        className="mt-14"
-      >
-        <motion.h3
-          variants={fadeInUp}
-          className="text-2xl sm:text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#0ef0ad] to-[#61dafb]"
-        >
-          Why Choose Me?
-        </motion.h3>
-        <motion.div
-          variants={fadeInUp}
-          className="max-w-3xl mx-auto text-lg leading-relaxed text-gray-300 space-y-4"
-        >
-          <p>
-            <strong>🎯 Tailored Solutions:</strong> Every project is crafted
-            around your goals and audience — no cookie-cutter templates.
-          </p>
-          <p>
-            <strong>🔧 Ongoing Support:</strong> I offer continuous updates
-            and improvements to keep your online presence strong.
-          </p>
-        </motion.div>
-      </motion.div>
-
-      {/* ✉️ CTA */}
-      <motion.div
-        className="mt-16"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-      >
-        <motion.h3
-          variants={fadeInUp}
-          className="text-2xl sm:text-3xl font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#0ef0ad] to-[#61dafb]"
-        >
-          Let’s Connect
-        </motion.h3>
-        <motion.p
-          variants={fadeInUp}
-          className="max-w-3xl mx-auto text-lg leading-relaxed mb-8 text-gray-300"
-        >
-          Whether you’re a startup or an established business, I’d love to
-          collaborate. Let’s elevate your digital presence together!
-        </motion.p>
-
-        <Link to="/contact">
-          <motion.button
-            whileHover={{
-              scale: 1.05,
-              boxShadow: '0 0 20px #61dafb, 0 0 40px #0ef0ad',
-            }}
-            className="px-8 py-3 bg-indigo-600 font-semibold rounded-full text-white hover:bg-indigo-700 transition"
+      {/* CTA */}
+      <section className="mt-28 flex flex-col sm:flex-row gap-6 justify-center">
+        <Magnetic>
+          <a
+            href={resumePng}
+            download
+            className="px-8 py-3 rounded-full font-semibold
+            text-black bg-gradient-to-r from-teal-400 to-sky-400"
           >
-            📬 Let’s Work Together
-          </motion.button>
-        </Link>
-      </motion.div>
+            📄 Download CV
+          </a>
+        </Magnetic>
+
+        <Magnetic>
+          <Link to="/contact">
+            <button className="px-8 py-3 rounded-full font-semibold
+            text-white bg-gradient-to-r from-violet-500 to-indigo-600">
+              🤝 Let’s Work Together
+            </button>
+          </Link>
+        </Magnetic>
+      </section>
+    </motion.section>
+  );
+}
+
+/* ================= COMPONENTS ================= */
+
+function Section({ title, children }) {
+  return (
+    <section className="mb-28 relative z-10">
+      <h2 className="text-3xl font-bold text-center mb-10">{title}</h2>
+      {children}
     </section>
+  );
+}
+
+function Card({ title, children, center }) {
+  return (
+    <motion.div
+      whileHover={{ y: -8 }}
+      className={`bg-white/5 backdrop-blur-lg
+      border border-white/10 rounded-3xl p-6 ${
+        center ? "text-center" : ""
+      }`}
+    >
+      {title && (
+        <h3 className="text-xl font-semibold mb-4 text-violet-400">
+          {title}
+        </h3>
+      )}
+      {children}
+    </motion.div>
+  );
+}
+
+function Magnetic({ children }) {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  return (
+    <motion.div
+      onMouseMove={(e) => {
+        const r = e.currentTarget.getBoundingClientRect();
+        x.set((e.clientX - r.left - r.width / 2) * 0.25);
+        y.set((e.clientY - r.top - r.height / 2) * 0.25);
+      }}
+      onMouseLeave={() => {
+        x.set(0);
+        y.set(0);
+      }}
+      style={{ x, y }}
+      whileHover={{ scale: 1.08 }}
+    >
+      {children}
+    </motion.div>
   );
 }
