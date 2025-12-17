@@ -37,14 +37,16 @@ export default function About() {
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
 
-  useEffect(() => {
-    const move = (e) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
-    };
-    window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
-  }, []);
+ useEffect(() => {
+  const move = (e) => {
+    cursorX.set(e.clientX);
+    cursorY.set(e.clientY);
+  };
+
+  window.addEventListener("mousemove", move);
+  return () => window.removeEventListener("mousemove", move);
+}, [cursorX, cursorY]);
+
 
   /* ================= DATA ================= */
 
