@@ -11,7 +11,7 @@ export default function Navbar() {
     "Services",
     "Projects",
     "Pricing",
-    "Testimonials",
+    
     "Contact",
   ];
 
@@ -33,7 +33,7 @@ export default function Navbar() {
             bg-gradient-to-r from-indigo-400 to-purple-500
             text-transparent bg-clip-text"
           >
-            🚀 Tushar
+            🚀 Tushar Dhawan
           </span>
           <span className="hidden sm:inline text-sm text-gray-400 group-hover:text-indigo-400 transition">
             Web Dev

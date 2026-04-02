@@ -13,6 +13,9 @@ import cert10thPdf from "../assets/certificate_10th.pdf";
 import cert12thPdf from "../assets/certificate_12th.pdf";
 import advancedWebdevCertPdf from "../assets/advanced_webdev_certificate.pdf";
 import pythonWorkshopCertPng from "../assets/python_workshop_certificate.jpg";
+import tataCert from "../assets/tata-cert.pdf";
+import deloitteCert from "../assets/deloitte-cert.pdf";
+import reactBootcampCert from "../assets/react-cert.pdf";
 
 // Experience Images (Certificates)
 import internshipCertImg from "../assets/Certificate.jpg";
@@ -37,15 +40,15 @@ export default function About() {
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
 
- useEffect(() => {
-  const move = (e) => {
-    cursorX.set(e.clientX);
-    cursorY.set(e.clientY);
-  };
+  useEffect(() => {
+    const move = (e) => {
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
+    };
 
-  window.addEventListener("mousemove", move);
-  return () => window.removeEventListener("mousemove", move);
-}, [cursorX, cursorY]);
+    window.addEventListener("mousemove", move);
+    return () => window.removeEventListener("mousemove", move);
+  }, [cursorX, cursorY]);
 
 
   /* ================= DATA ================= */
@@ -64,7 +67,7 @@ export default function About() {
       company: "Zidio Development",
       duration: "April 2025 – July 2025",
       description:
-        "Completed structured training in Web Development focusing on HTML, CSS, JavaScript, and project-based learning. Strengthened core development concepts, debugging skills, and best practices for deployment.",
+        "Completed structured training in Web Development focusing on MERN Stack and project-based learning. Strengthened core development concepts, debugging skills, and best practices for deployment.",
       image: trainingCertImg,
     },
   ];
@@ -94,8 +97,36 @@ export default function About() {
   ];
 
   const certifications = [
-    { title: "Advanced Web Development & Designing", file: advancedWebdevCertPdf },
-    { title: "Python Workshop", file: pythonWorkshopCertPng },
+    {
+      title: "Advanced Web Development & Designing",
+      file: advancedWebdevCertPdf,
+      details:
+        "Completed at Bharat Media Computer Center covering HTML, CSS, JavaScript, Bootstrap, WordPress, Photoshop, and PHP.",
+    },
+    {
+      title: "Python Workshop",
+      file: pythonWorkshopCertPng,
+      details:
+        "2-day Python bootcamp where I learned Python fundamentals, basic programming logic, and real-world problem-solving.",
+    },
+    {
+      title: "React Bootcamp",
+      file: reactBootcampCert,
+      details:
+        "Learned React fundamentals including components, props, state, hooks, and building dynamic web applications.",
+    },
+    {
+      title: "Deloitte Cyber Security Job Simulation",
+      file: deloitteCert,
+      details:
+        "Completed Deloitte Cyber Security simulation. Learned core concepts of cyber security, risk identification, and practical security tasks.",
+    },
+    {
+      title: "Tata GenAI Data Analytics Job Simulation",
+      file: tataCert,
+      details:
+        "Completed Tata GenAI Data Analytics simulation. Gained experience in exploratory data analysis, risk profiling, AI-based prediction, and business data storytelling.",
+    },
   ];
 
   return (
@@ -209,9 +240,8 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className={`relative flex flex-col md:flex-row gap-6 ${
-                  i % 2 === 0 ? "md:flex-row-reverse" : ""
-                }`}
+                className={`relative flex flex-col md:flex-row gap-6 ${i % 2 === 0 ? "md:flex-row-reverse" : ""
+                  }`}
               >
                 <div className="absolute left-1/2 top-6 w-4 h-4 rounded-full
                 bg-gradient-to-r from-teal-400 to-violet-500
@@ -248,7 +278,11 @@ export default function About() {
         <div className="grid sm:grid-cols-2 gap-10 max-w-3xl mx-auto">
           {certifications.map((cert, i) => (
             <Card key={i} center>
-              <p className="text-gray-200 mb-3">{cert.title}</p>
+              <p className="text-gray-200 mb-2">{cert.title}</p>
+
+              <p className="text-xs text-gray-400 mb-3 leading-relaxed">
+                {cert.details}
+              </p>
               <a
                 href={cert.file}
                 download
@@ -303,9 +337,8 @@ function Card({ title, children, center }) {
     <motion.div
       whileHover={{ y: -8 }}
       className={`bg-white/5 backdrop-blur-lg
-      border border-white/10 rounded-3xl p-6 ${
-        center ? "text-center" : ""
-      }`}
+      border border-white/10 rounded-3xl p-6 ${center ? "text-center" : ""
+        }`}
     >
       {title && (
         <h3 className="text-xl font-semibold mb-4 text-violet-400">

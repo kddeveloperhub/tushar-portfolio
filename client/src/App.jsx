@@ -9,7 +9,7 @@ import Services from './pages/Services';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Pricing from './pages/Pricing';
-import Testimonials from './pages/Testimonials'; // ✅ NEW
+
 
 function HomePage() {
   return (
@@ -36,7 +36,7 @@ function App() {
             <Route path="/about" element={<About />} />
              <Route path="/contact" element={<Contact />} />
              <Route path="/projects" element={<Projects />} />
-            <Route path="/testimonials" element={<Testimonials />} /> 
+            
           </Routes>
         </main>
 

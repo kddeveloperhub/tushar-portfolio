@@ -1,0 +1,442 @@
+header {
+    background-color: hsl(208.62deg 78.38% 43.53%);
+    color: white;
+}
+
+.Topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Afternavbar {
+    display: flex;
+    align-items: center;
+}
+
+.Navafter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Navafter ul {
+    display: flex;
+}
+
+.Navafter li {
+    list-style: none;
+    padding-left: 90px;
+}
+
+.Navafter1 ul {
+    display: flex;
+}
+
+.Navafter1 li {
+    list-style: none;
+    padding-right: 17px;
+}
+
+.navbeoforei i {
+    margin-left: 45px;
+    font-size: 17px;
+    padding-right: 10px;
+}
+
+.Navbefore h1 {
+    padding-left: 84px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.logo img {
+    padding-right: 130px;
+}
+
+.sec-2 {
+    background-image: url('images/pexels-www-erzetich-com-2628105.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    padding: 25px 0;
+}
+
+.text h1 {
+    color: hsl(205.57deg 42.07% 71.57%);
+    text-align: right;
+    padding-right: 85px;
+    font-size: 28px;
+}
+
+.text h2 {
+    color: hsl(208.62deg 78.38% 43.53%);
+    text-align: right;
+    padding-right: 385px;
+}
+
+.text p {
+    color: hsl(205.57deg 42.07% 71.57%);
+    text-align: right;
+    padding-right: 124px;
+    font-size: 20px;
+}
+
+.text button {
+    color: white;
+    background-color: hsl(208.62deg 78.38% 43.53%);
+    margin-left: 979px;
+}
+
+.needarepair {
+    border: 1px solid black;
+    margin-left: 124px;
+    margin-right: 67px;
+    margin-top: -85px;
+    background-color: hsl(203.08deg 49.62% 25.69%);
+    display: flex;
+}
+
+.needarepair img {
+    width: 703px;
+    height: 157px;
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
+}
+
+.needarepair h1 {
+    font-size: 20px;
+    color: white;
+    padding-top: 17px;
+}
+
+.needarepair span {
+    font-size: 20px;
+}
+
+.sec-3 {
+    padding: 30px 0;
+    display: flex;
+    padding: 80px 0;
+}
+
+.sec-3repairphone img {
+    width: 400px;
+    padding-left: 293px;
+}
+
+.aboutus h1 {
+    color: hsl(209.26deg 78.64% 40.39%);
+    padding-left: 123px;
+}
+
+.aboutus h2 {
+    padding-left: 123px;
+    font-size: 29px;
+}
+
+.aboutus p {
+    padding-left: 123px;
+}
+
+.Phonediagonsis img {
+    width: 35px;
+    height: 63px;
+    padding-left: 123px;
+}
+
+.Phonediagonsis {
+    display: flex;
+}
+
+.Phonediagonsis h1 {
+    font-size: 20px;
+    padding-top: 2px;
+    color: hsl(209.26deg 78.64% 40.39%);
+    padding-left: 0px;
+}
+
+.Phonediagonsis i {
+    font-size: 27px;
+    color: hsl(0deg 0.87% 54.9%);
+    padding-left: 21px;
+    padding-top: 14px;
+}
+
+.Phonediagonsis i1 {
+    font-size: 27px;
+    color: hsl(0deg 0.87% 54.9%);
+    padding-left: 115px;
+    padding-top: 12px;
+}
+
+.Phonediagonsis h2 {
+    font-size: 20px;
+    color: hsl(209.26deg 78.64% 40.39%);
+    padding-left: 0px;
+}
+
+.earphone i {
+    font-size: 27px;
+    color: hsl(0deg 0.87% 54.9%);
+    padding-left: 35px;
+    padding-top: 14px;
+}
+
+.earphone i1 {
+    font-size: 27px;
+    color: hsl(0deg 0.87% 54.9%);
+    padding-left: 115px;
+    padding-top: 12px;
+}
+
+.earphone h1 {
+    font-size: 20px;
+    padding-top: 2px;
+    color: hsl(209.26deg 78.64% 40.39%);
+    padding-left: 0px;
+}
+
+.earphone h2 {
+    font-size: 20px;
+    color: hsl(209.26deg 78.64% 40.39%);
+    padding-left: 0px;
+}
+
+.earphone {
+    display: flex;
+}
+
+.sec-3 button {
+    margin-left: 116px;
+    background-color: hsl(209.62deg 79% 39.22%);
+    color: white;
+}
+
+.repair img {
+    width: 520px;
+    padding-left: 111px;
+}
+
+.sec-4 {
+    align-items: center;
+    background-image: url('images/pexels-pixabay-4158.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 800px;
+    padding: 80px 0;
+}
+
+.sec-4text h1 {
+    padding-left: 744px;
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+    font-size: 27px;
+}
+
+.sec-4text h2 {
+    padding-left: 743px;
+    color: white;
+    text-align: center;
+    font-size: 23px;
+}
+
+.ourservice h1 {
+    text-align: center;
+}
+
+.ourservice p {
+    text-align: center;
+}
+
+.newmain {
+    display: flex;
+}
+
+.one h1 {
+    padding-left: 115px;
+    color: hsl(209.62deg 79% 39.22%);
+}
+
+.one p {
+    padding-left: 100px;
+}
+
+.two p {
+    padding-left: 129px;
+}
+
+.two h1 {
+    color: hsl(209.62deg 79% 39.22%);
+    padding-left: 129px;
+}
+
+.keyboardstruct h1 {
+    padding-left: 138px;
+    padding-top: 105px;
+}
+
+.keyboardrepair img {
+    width: 73%;
+    border: 5px dotted red;
+    border-radius: 100%;
+    padding: 6px;
+    height: 305px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.one button {
+    margin-left: 195px;
+    background-color: hsl(209.62deg 79% 39.22%);
+    color: white;
+}
+
+.two button {
+    margin-left: 195px;
+    background-color: hsl(209.62deg 79% 39.22%);
+    color: white;
+}
+
+.assemble img {
+    padding-top: 20px;
+    width: 500px;
+}
+
+.Ourblog h1 {
+    padding-left: 123px;
+}
+
+.Ourblog p {
+    padding-left: 123px;
+}
+
+.Ourblog button {
+    margin-left: 123px;
+    color: white;
+    background-color: hsl(209.62deg 79% 39.22%);
+}
+
+.assemble h1 {
+    padding-left: 123px;
+}
+
+.sec-6newmain {
+    display: flex;
+}
+
+.pin img {
+    padding-left: 233px;
+    width: 500px;
+}
+
+.pin h1 {
+    padding-left: 243px;
+    font-size: 24px;
+}
+
+.pin p {
+    padding-left: 248px;
+}
+
+.pin button {
+    margin-left: 247px;
+    color: white;
+    background-color: hsl(209.62deg 79% 39.22%);
+}
+
+.Ourblog img {
+    width: 500px;
+    padding-top: 10px;
+    padding-left: 120px;
+}
+
+.Ourblog h2 {
+    padding-left: 123px;
+    font-size: 19px;
+}
+
+.sec-6 {
+    padding: 20px 0;
+}
+
+.sec-5 {
+    padding: 80px 0;
+}
+
+.sec-7 {
+    display: flex;
+    background-color: hsl(209.62deg 79% 39.22%);
+    color: white;
+    padding: 40px 0px;
+}
+
+.About {
+    padding-left: 25px;
+}
+
+.servicemenu {
+    display: flex;
+}
+
+.servicemenu1 {
+    display: flex;
+}
+
+.quicklink {
+    padding-left: 120px;
+}
+
+.Services1 {
+    padding-left: 110px;
+}
+
+.servicemenu li {
+    list-style: none;
+    font-size: 18px;
+    padding: 4px;
+}
+
+.servicemenu1 li {
+    list-style: none;
+    font-size: 18px;
+    padding: 4px;
+}
+
+.About p {
+    font-size: 19px;
+}
+
+.About h1 {
+    font-size: 40px;
+}
+
+.quicklink h1 {
+    text-align: center;
+    font-size: 33px;
+}
+
+.Services1 h1 {
+    text-align: center;
+    font-size: 35px;
+}
+
+.subscribe {
+    margin: 10px 10px 13px 246px;
+    padding: 10px 10px 63px 10px;
+    background-color: hsl(209.62deg 79% 39.22%);
+    color: white;
+}
+
+.subscribe button {
+    background-color: hsl(209.62deg 79% 39.22%);
+    color: white;
+}
+
+.subscribe h1 {
+    font-size: 41px;
+}
+
+.subscribe form input {
+    padding: 6px 92px 4px 84px;
+}
