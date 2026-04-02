@@ -21,7 +21,7 @@ import ayukaVideo from "../assets/ayuka.mp4";
 // add one common thumbnail
 
 // live image
-import clothingImage from "../assets/clothing.png";
+import clothingImage from "../assets/cloths.png";
 
 const categories = ["All", "Full Stack", "Frontend", "Static"];
 
