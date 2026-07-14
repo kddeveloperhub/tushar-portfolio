@@ -1,0 +1,1709 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* =========================
+   HEADER / NAVBAR
+========================= */
+
+.sec-1 {
+    background: linear-gradient(90deg, #111827, #1e1b4b);
+    color: white;
+}
+
+.navbar {
+    padding: 10px 0;
+}
+
+/* Logo */
+
+.navbar-brand img {
+    width: 60px;
+    height: auto;
+}
+
+/* Navigation */
+
+.navbar-nav {
+    gap: 15px;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #00e6b8;
+}
+
+/* Phone */
+
+.phone {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: white;
+    font-size: 13px;
+
+    margin-right: 10px;
+}
+
+.phone i {
+    color: #00e6b8;
+}
+
+/* Right Icons */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu i {
+    color: white;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.menu i:hover {
+    color: #00e6b8;
+    transform: translateY(-3px);
+}
+/* Hero Section    */
+.sec-2 {
+    min-height: 624px;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.65)
+        ),
+        url("images/Untitled-2.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.sec2txt {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.sec2txt h1 {
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.sec2txt h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.sec2txt p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #e5e7eb;
+}
+
+.sec2txt button {
+    background-color: #00e6b8;
+    color: #111827;
+
+    border: none;
+    padding: 12px 28px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.sec2txt button:hover {
+    background-color: white;
+    color: #111827;
+    transform: translateY(-3px);
+}
+/* Section-3  */
+.sec-3 {
+    background-color: #050505;
+    color: white;
+    padding: 80px 0;
+}
+
+.gamezone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gamezone img {
+    width: 100%;
+    max-width: 430px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.unpleash {
+    max-width: 550px;
+}
+
+.unpleash h1 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.unpleash h2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.unpleash p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.unpleash span {
+    color: #00e6b8;
+}
+/* Section-4   */
+.sec-4 {
+    min-height: 700px;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(5, 5, 5, 0.80)
+        ),
+        url("images/pexels-tima-miroshnichenko-5380594.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 80px 20px;
+}
+
+.gamedetail {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.gamedetail h1 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.gamedetail h2 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.gamedetail p {
+    max-width: 750px;
+    margin: 0 auto;
+    color: #d1d5db;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.gamedetail span {
+    color: #00e6b8;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    margin-top: 45px;
+}
+
+.icon i {
+    width: 75px;
+    height: 75px;
+
+    border: 1px solid rgba(0, 230, 184, 0.5);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+    color: #00e6b8;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.icon i:hover {
+    background-color: #00e6b8;
+    color: #111827;
+    border-color: #00e6b8;
+
+    transform: translateY(-8px);
+}
+/* Section-5    */
+.sec-5 {
+    background-color: #222434;
+    color: white;
+    padding: 100px 0;
+}
+
+/* Left Content */
+
+.service1 {
+    padding-right: 30px;
+}
+
+.service1 span {
+    color: #00e6b8;
+}
+
+.service1 h1 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.service1 h2 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.service1 p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.service1 img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+/* Right Services */
+
+.main23 {
+    padding-left: 30px;
+}
+
+.service-box {
+    display: flex;
+    gap: 20px;
+
+    padding: 25px 20px;
+    margin-bottom: 15px;
+
+    border-bottom: 1px solid #404250;
+
+    transition: all 0.3s ease;
+}
+
+.service-number {
+    color: #00e6b8;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.service-box h3 {
+    color: #00e6b8;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.service-box p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.service-box:hover {
+    background-color: #2d3042;
+    transform: translateX(8px);
+}
+/* Section-6        */
+.sec-6 {
+    background-color: #050505;
+    color: white;
+    padding: 100px 0;
+}
+
+
+/* Section Heading */
+
+.ourgames {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.ourgames button {
+    background-color: #00e6b8;
+    color: #111827;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 8px 20px;
+    margin-bottom: 15px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.ourgames h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.ourgames p {
+    color: #9ca3af;
+    font-size: 15px;
+}
+
+
+/* Game Card */
+
+.game-card {
+    background-color: #222434;
+
+    border: 1px solid #343747;
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition: transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #00e6b8;
+
+    box-shadow: 0 15px 35px rgba(0, 230, 184, 0.15);
+}
+
+
+/* Game Image */
+
+.game-image {
+    height: 350px;
+    overflow: hidden;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.game-card:hover .game-image img {
+    transform: scale(1.05);
+}
+
+
+/* Card Content */
+
+.game-content {
+    padding: 25px;
+}
+
+.game-content h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+
+/* Game Tags */
+
+.game-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    padding: 0;
+    margin: 0 0 25px;
+}
+
+.game-tags li {
+    list-style: none;
+
+    background-color: #343747;
+    color: #d1d5db;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+}
+
+
+/* Game Statistics */
+
+.game-stats {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: #191b28;
+
+    border-radius: 8px;
+
+    padding: 18px 15px;
+    margin-bottom: 25px;
+}
+
+.game-stats div {
+    flex: 1;
+    text-align: center;
+}
+
+.game-stats div:not(:last-child) {
+    border-right: 1px solid #404250;
+}
+
+.game-stats strong {
+    display: block;
+
+    color: white;
+
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.game-stats span {
+    color: #00e6b8;
+}
+
+.game-stats small {
+    color: #9ca3af;
+    font-size: 11px;
+}
+
+
+/* Play Button */
+
+.play-btn {
+    display: block;
+
+    background-color: #00e6b8;
+    color: #111827;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 11px 28px;
+
+    margin: 0 auto;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+    background-color: white;
+    transform: translateY(-3px);
+}
+
+
+/* Load More Button */
+
+.sec6btn {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.sec6btn button {
+    background-color: transparent;
+    color: #00e6b8;
+
+    border: 1px solid #00e6b8;
+    border-radius: 5px;
+
+    padding: 12px 28px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.sec6btn button:hover {
+    background-color: #00e6b8;
+    color: #111827;
+}
+/* Section-7     */
+.sec-7 {
+    background-color: #050505;
+    color: white;
+    padding: 100px 0;
+}
+
+
+/* Our Experts Button */
+
+.sparkle-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.sparkle-button {
+    background-color: #00e6b8;
+    color: #111827;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 10px 24px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sparkle-button:hover {
+    background-color: white;
+    transform: translateY(-3px);
+}
+
+
+/* Section Heading */
+
+.Experts {
+    max-width: 900px;
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.Experts h2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.3;
+
+    margin-bottom: 18px;
+}
+
+.Experts p {
+    max-width: 750px;
+    margin: 0 auto;
+
+    color: #9ca3af;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.Experts span {
+    color: #00e6b8;
+}
+
+
+/* Expert Card */
+
+.expert-card {
+    background-color: #222434;
+
+    border: 1px solid #343747;
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+}
+
+.expert-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #00e6b8;
+
+    box-shadow: 0 15px 35px rgba(0, 230, 184, 0.15);
+}
+
+
+/* Expert Image */
+
+.expert-image {
+    width: 100%;
+    height: 330px;
+
+    overflow: hidden;
+}
+
+.expert-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.expert-card:hover .expert-image img {
+    transform: scale(1.05);
+}
+
+
+/* Expert Information */
+
+.expert-info {
+    text-align: center;
+    padding: 22px;
+}
+
+.expert-info h3 {
+    font-size: 24px;
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.expert-info p {
+    color: #00e6b8;
+
+    font-size: 15px;
+
+    margin-bottom: 0;
+}
+/* Section-8    */
+.sec-8 {
+    background-color: #11121c;
+    color: white;
+
+    padding: 80px 0 25px;
+
+    border-top: 1px solid #2d3042;
+}
+
+
+/* =========================
+   GameQuest Information
+========================= */
+
+.GameQuest h2 {
+    font-size: 32px;
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+.GameQuest h2 span {
+    color: #00e6b8;
+}
+
+.GameQuest p {
+    color: #9ca3af;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    max-width: 350px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   Social Media Icons
+========================= */
+
+.icon1 {
+    display: flex;
+    gap: 12px;
+}
+
+.icon1 a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #00e6b8;
+    border-radius: 50%;
+
+    color: #00e6b8;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.icon1 a:hover {
+    background-color: #00e6b8;
+    color: #111827;
+
+    transform: translateY(-5px);
+}
+
+.icon1 i {
+    font-size: 17px;
+}
+
+
+/* =========================
+   Quick Links
+========================= */
+
+.links h3,
+.subscribe h3 {
+    color: #00e6b8;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    margin-bottom: 22px;
+}
+
+.links ul {
+    padding: 0;
+    margin: 0;
+}
+
+.links li {
+    list-style: none;
+
+    margin-bottom: 12px;
+}
+
+.links li a {
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    transition: all 0.3s ease;
+}
+
+.links li a:hover {
+    color: #00e6b8;
+
+    padding-left: 7px;
+}
+
+
+/* =========================
+   Newsletter
+========================= */
+
+.subscribe p {
+    color: #9ca3af;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+.subscribe-form {
+    display: flex;
+
+    background-color: #222434;
+
+    border: 1px solid #343747;
+    border-radius: 6px;
+
+    overflow: hidden;
+}
+
+.subscribe-form input {
+    flex: 1;
+
+    background-color: transparent;
+    color: white;
+
+    border: none;
+    outline: none;
+
+    padding: 14px 15px;
+
+    font-size: 14px;
+}
+
+.subscribe-form input::placeholder {
+    color: #9ca3af;
+}
+
+.subscribe-form button {
+    background-color: #00e6b8;
+    color: #111827;
+
+    border: none;
+
+    padding: 0 22px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: white;
+}
+
+
+/* =========================
+   Footer Bottom
+========================= */
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1px solid #2d3042;
+
+    margin-top: 60px;
+    padding-top: 25px;
+}
+
+.footer-bottom p {
+    color: #6b7280;
+
+    font-size: 14px;
+
+    margin: 0;
+}
+
+.footer-policy {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-policy a {
+    color: #9ca3af;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: color 0.3s ease;
+}
+
+.footer-policy a:hover {
+    color: #00e6b8;
+}
+/* =========================================
+   TABLET RESPONSIVE
+   992px AND BELOW
+========================================= */
+
+@media (max-width: 992px) {
+
+    /* ================= SECTION 1 ================= */
+
+    .sec-1 {
+        padding: 15px 0;
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .logo img {
+        width: 60px;
+    }
+
+    .navbar-menu ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .menu {
+        justify-content: center;
+        margin-top: 15px;
+        gap: 25px;
+    }
+
+
+    /* ================= SECTION 2 ================= */
+
+    .sec-2 {
+        min-height: 550px;
+        padding: 60px 20px;
+    }
+
+    .sec2txt {
+        max-width: 700px;
+    }
+
+    .sec2txt h1 {
+        font-size: 20px;
+    }
+
+    .sec2txt h2 {
+        font-size: 42px;
+    }
+
+
+    /* ================= SECTION 3 ================= */
+
+    .sec-3 {
+        padding: 70px 0;
+    }
+
+    .gamezone img {
+        max-width: 350px;
+    }
+
+    .unpleash h2 {
+        font-size: 32px;
+    }
+
+
+    /* ================= SECTION 4 ================= */
+
+    .sec-4 {
+        min-height: 650px;
+        padding: 70px 20px;
+    }
+
+    .gamedetail h2 {
+        font-size: 36px;
+    }
+
+    .icon {
+        gap: 15px;
+    }
+
+    .icon i {
+        width: 65px;
+        height: 65px;
+        font-size: 28px;
+    }
+
+
+    /* ================= SECTION 5 ================= */
+
+    .sec-5 {
+        padding: 80px 0;
+    }
+
+    .service1 {
+        padding-right: 15px;
+    }
+
+    .service1 h2 {
+        font-size: 32px;
+    }
+
+    .service1 img {
+        height: 330px;
+    }
+
+    .main23 {
+        padding-left: 15px;
+    }
+
+
+    /* ================= SECTION 6 ================= */
+
+    .sec-6 {
+        padding: 80px 0;
+    }
+
+    .ourgames h2 {
+        font-size: 35px;
+    }
+
+    .game-image {
+        height: 320px;
+    }
+
+
+    /* ================= SECTION 7 ================= */
+
+    .sec-7 {
+        padding: 80px 0;
+    }
+
+    .Experts h2 {
+        font-size: 32px;
+    }
+
+    .expert-image {
+        height: 300px;
+    }
+
+
+    /* ================= SECTION 8 ================= */
+
+    .sec-8 {
+        padding: 70px 0 25px;
+    }
+
+    .subscribe-form {
+        flex-direction: column;
+        background-color: transparent;
+        border: none;
+        gap: 10px;
+    }
+
+    .subscribe-form input {
+        background-color: #222434;
+        border: 1px solid #343747;
+        border-radius: 5px;
+    }
+
+    .subscribe-form button {
+        padding: 14px;
+        border-radius: 5px;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+   991px AND BELOW
+========================================= */
+@media (max-width: 991px) {
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    /* Hamburger Button */
+
+    .navbar-toggler {
+        border: 1px solid #00e6b8;
+        box-shadow: none;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+
+    /* Opened Mobile Menu */
+
+    .navbar-collapse {
+        margin-top: 15px;
+
+        background-color: #111827;
+
+        padding: 20px;
+
+        border-radius: 10px;
+
+        border: 1px solid #2d3042;
+    }
+
+    /* Navigation Links */
+
+    .navbar-nav {
+        align-items: flex-start !important;
+        gap: 5px;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+
+    .navbar-nav .nav-link:hover {
+        padding-left: 8px;
+    }
+
+    /* Phone */
+
+    .phone {
+        margin-bottom: 10px;
+        padding-bottom: 15px;
+
+        border-bottom: 1px solid #343747;
+    }
+
+    /* Icons */
+
+    .menu {
+        margin-top: 15px;
+        padding-top: 15px;
+
+        border-top: 1px solid #343747;
+
+        justify-content: flex-start;
+    }
+}
+/* =========================================
+   MOBILE RESPONSIVE
+   768px AND BELOW
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* ================= SECTION 1 ================= */
+
+    .sec-1 {
+        padding: 15px 0;
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .logo img {
+        width: 60px;
+    }
+
+    .navbar-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+
+        padding: 0;
+        margin: 0;
+    }
+
+    .phone {
+        margin-bottom: 5px;
+    }
+
+    .menu {
+        justify-content: center;
+        gap: 25px;
+
+        margin-top: 20px;
+    }
+
+
+    /* ================= SECTION 2 ================= */
+
+    .sec-2 {
+        min-height: 500px;
+
+        padding: 60px 20px;
+
+        background-position: center;
+    }
+
+    .sec2txt {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .sec2txt h1 {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .sec2txt h2 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .sec2txt p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .sec2txt button {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+
+
+    /* ================= SECTION 3 ================= */
+
+    .sec-3 {
+        padding: 60px 20px;
+    }
+
+    .gamezone {
+        margin-bottom: 40px;
+    }
+
+    .gamezone img {
+        max-width: 300px;
+    }
+
+    .unpleash {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .unpleash h1 {
+        font-size: 16px;
+    }
+
+    .unpleash h2 {
+        font-size: 28px;
+    }
+
+    .unpleash p {
+        font-size: 14px;
+    }
+
+
+    /* ================= SECTION 4 ================= */
+
+    .sec-4 {
+        min-height: 650px;
+        padding: 60px 20px;
+    }
+
+    .gamedetail {
+        width: 100%;
+    }
+
+    .gamedetail h1 {
+        font-size: 16px;
+    }
+
+    .gamedetail h2 {
+        font-size: 30px;
+    }
+
+    .gamedetail p {
+        font-size: 14px;
+    }
+
+    .icon {
+        gap: 12px;
+        margin-top: 35px;
+    }
+
+    .icon i {
+        width: 55px;
+        height: 55px;
+
+        font-size: 23px;
+    }
+
+
+    /* ================= SECTION 5 ================= */
+
+    .sec-5 {
+        padding: 60px 20px;
+    }
+
+    .service1 {
+        padding-right: 0;
+        text-align: center;
+
+        margin-bottom: 45px;
+    }
+
+    .service1 h1 {
+        font-size: 17px;
+    }
+
+    .service1 h2 {
+        font-size: 30px;
+    }
+
+    .service1 p {
+        font-size: 14px;
+    }
+
+    .service1 img {
+        width: 100%;
+        height: 300px;
+    }
+
+    .main23 {
+        padding-left: 0;
+    }
+
+    .service-box {
+        padding: 20px 15px;
+    }
+
+    .service-box h3 {
+        font-size: 21px;
+    }
+
+    .service-box p {
+        font-size: 14px;
+    }
+
+
+    /* ================= SECTION 6 ================= */
+
+    .sec-6 {
+        padding: 60px 15px;
+    }
+
+    .ourgames {
+        margin-bottom: 40px;
+    }
+
+    .ourgames h2 {
+        font-size: 30px;
+    }
+
+    .ourgames p {
+        font-size: 14px;
+    }
+
+    .game-image {
+        height: 300px;
+    }
+
+    .game-content {
+        padding: 20px;
+    }
+
+    .game-content h3 {
+        font-size: 25px;
+    }
+
+    .game-tags {
+        justify-content: center;
+    }
+
+    .game-stats {
+        padding: 15px 8px;
+    }
+
+    .game-stats strong {
+        font-size: 14px;
+    }
+
+    .game-stats small {
+        font-size: 10px;
+    }
+
+    .sec6btn {
+        margin-top: 40px;
+    }
+
+
+    /* ================= SECTION 7 ================= */
+
+    .sec-7 {
+        padding: 60px 15px;
+    }
+
+    .Experts {
+        margin-bottom: 40px;
+    }
+
+    .Experts h2 {
+        font-size: 28px;
+    }
+
+    .Experts p {
+        font-size: 14px;
+    }
+
+    .expert-image {
+        height: 320px;
+    }
+
+    .expert-info h3 {
+        font-size: 22px;
+    }
+
+
+    /* ================= SECTION 8 ================= */
+
+    .sec-8 {
+        padding: 60px 20px 20px;
+    }
+
+    .GameQuest,
+    .links,
+    .subscribe {
+        text-align: center;
+    }
+
+    .GameQuest p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .icon1 {
+        justify-content: center;
+    }
+
+    .links {
+        margin-top: 10px;
+    }
+
+    .subscribe-form {
+        flex-direction: column;
+
+        background-color: transparent;
+        border: none;
+
+        gap: 10px;
+    }
+
+    .subscribe-form input {
+        width: 100%;
+
+        background-color: #222434;
+
+        border: 1px solid #343747;
+        border-radius: 5px;
+
+        padding: 14px;
+    }
+
+    .subscribe-form button {
+        width: 100%;
+
+        padding: 14px;
+
+        border-radius: 5px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+    .footer-policy {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: 15px;
+    }
+}
+
+
+
+/* =========================================
+   SMALL MOBILE
+   576px AND BELOW
+========================================= */
+
+@media (max-width: 576px) {
+
+    /* ================= SECTION 1 ================= */
+
+    .logo img {
+        width: 50px;
+    }
+
+    .navbar-menu li a,
+    .phone {
+        font-size: 13px;
+    }
+
+    .menu {
+        gap: 20px;
+    }
+
+
+    /* ================= SECTION 2 ================= */
+
+    .sec-2 {
+        min-height: 450px;
+        padding: 50px 15px;
+    }
+
+    .sec2txt h1 {
+        font-size: 14px;
+    }
+
+    .sec2txt h2 {
+        font-size: 27px;
+    }
+
+    .sec2txt p {
+        font-size: 13px;
+    }
+
+
+    /* ================= SECTION 3 ================= */
+
+    .sec-3 {
+        padding: 50px 15px;
+    }
+
+    .gamezone img {
+        max-width: 250px;
+    }
+
+    .unpleash h2 {
+        font-size: 25px;
+    }
+
+
+    /* ================= SECTION 4 ================= */
+
+    .sec-4 {
+        min-height: 600px;
+        padding: 50px 15px;
+    }
+
+    .gamedetail h2 {
+        font-size: 26px;
+    }
+
+    .icon {
+        gap: 10px;
+    }
+
+    .icon i {
+        width: 50px;
+        height: 50px;
+
+        font-size: 20px;
+    }
+
+
+    /* ================= SECTION 5 ================= */
+
+    .sec-5 {
+        padding: 50px 15px;
+    }
+
+    .service1 h2 {
+        font-size: 26px;
+    }
+
+    .service1 img {
+        height: 250px;
+    }
+
+    .service-box {
+        gap: 12px;
+        padding: 18px 10px;
+    }
+
+    .service-box h3 {
+        font-size: 19px;
+    }
+
+
+    /* ================= SECTION 6 ================= */
+
+    .sec-6 {
+        padding: 50px 10px;
+    }
+
+    .ourgames h2 {
+        font-size: 27px;
+    }
+
+    .game-image {
+        height: 260px;
+    }
+
+    .game-content {
+        padding: 18px;
+    }
+
+    .game-stats {
+        gap: 5px;
+    }
+
+    .game-stats strong {
+        font-size: 13px;
+    }
+
+
+    /* ================= SECTION 7 ================= */
+
+    .sec-7 {
+        padding: 50px 10px;
+    }
+
+    .Experts h2 {
+        font-size: 25px;
+    }
+
+    .expert-image {
+        height: 280px;
+    }
+
+
+    /* ================= SECTION 8 ================= */
+
+    .sec-8 {
+        padding: 50px 15px 20px;
+    }
+
+    .GameQuest h2 {
+        font-size: 28px;
+    }
+
+    .links h3,
+    .subscribe h3 {
+        font-size: 20px;
+    }
+
+    .footer-policy {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
