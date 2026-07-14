@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import gsap from "gsap";
 
 // Assets
-import resumePng from "../assets/resume.jpg";
+import resumePng from "../assets/Tushar Resume.jpg";
 import cert10thPdf from "../assets/certificate_10th.pdf";
 import cert12thPdf from "../assets/certificate_12th.pdf";
 import advancedWebdevCertPdf from "../assets/advanced_webdev_certificate.pdf";
