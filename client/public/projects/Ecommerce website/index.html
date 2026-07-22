@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Website</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<!--========================
+        HEADER
+=========================-->
+
+<header class="header">
+
+    <!-- Navigation -->
+
+    <div class="container">
+
+        <nav class="nav">
+
+            <!-- Logo -->
+
+            <a href="index.html" class="logo">
+                Elite<span>Store</span>
+            </a>
+
+            <!-- Navigation -->
+
+            <div class="navbar" id="navbar">
+
+                <ul>
+
+                    <li><a class="active" href="index.html">Home</a></li>
+
+                    <li><a href="products.html">Products</a></li>
+
+                    <li><a href="#">About</a></li>
+
+                    <li><a href="#">Contact</a></li>
+
+                    <li><a href="#">Account</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="nav-right">
+
+                <!-- Cart -->
+
+                <div class="cart-icon">
+
+                    <button class="cart-order">
+
+                        <span class="cart-default">
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                        </span>
+
+                        <span class="cart-success">
+                            <i class="fa-solid fa-check"></i>
+                            <span class="success-text">
+                                Order Placed
+                            </span>
+                        </span>
+
+                        <div class="cart-box"></div>
+
+                        <div class="cart-truck">
+
+                            <div class="truck-back"></div>
+
+                            <div class="truck-front">
+                                <div class="truck-window"></div>
+                            </div>
+
+                            <div class="truck-light top"></div>
+                            <div class="truck-light bottom"></div>
+
+                        </div>
+
+                        <div class="cart-lines"></div>
+
+                    </button>
+
+                </div>
+
+                <!-- Hamburger -->
+
+                <button class="menu-toggle" id="menu-toggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <div class="container">
+
+            <div class="row">
+
+                <!-- Left -->
+
+                <div class="col-2 hero-content">
+
+                    <span class="hero-badge">
+
+                        🔥 New Collection 2026
+
+                    </span>
+
+                    <h1>
+
+                        Elite Gear For
+                        <br>
+
+                        Elite Athletes
+
+                    </h1>
+
+                    <p>
+
+                        Discover premium sportswear engineered for speed,
+                        comfort and performance.
+
+                    </p>
+
+                    <div class="hero-btns">
+
+                        <a href="products.html" class="btn">
+
+                            Shop Now
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                        <a href="products.html" class="btn btn-outline">
+
+                            Explore
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Right -->
+
+                <div class="col-2 hero-image">
+
+                    <img
+                        src="images/image1.png"
+                        alt="Sports Collection"
+                        class="beat-image"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</header>
+
+<!-- =========================
+        Categories
+========================= -->
+
+<section class="categories">
+
+    <div class="small-container">
+
+        <div class="section-heading">
+
+
+            <h2 class="title1">Shop by Category</h2>
+
+        </div>
+
+        <div class="row">
+
+            <!-- Category 1 -->
+
+            <div class="col-3">
+
+                <div class="category-card">
+
+                    <img src="images/category-1.jpg" alt="Men Collection">
+
+                    <div class="category-content">
+
+                        <h3>Men</h3>
+
+                        <a href="products.html">
+                            Explore
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Category 2 -->
+
+            <div class="col-3">
+
+                <div class="category-card">
+
+                    <img src="images/category-2.jpg" alt="Women Collection">
+
+                    <div class="category-content">
+
+                        <h3>Women</h3>
+
+                        <a href="products.html">
+                            Explore
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Category 3 -->
+
+            <div class="col-3">
+
+                <div class="category-card">
+
+                    <img src="images/category-3.jpg" alt="Accessories">
+
+                    <div class="category-content">
+
+                        <h3>Accessories</h3>
+
+                        <a href="products.html">
+                            Explore
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+      Featured Products
+========================= -->
+
+<section class="featured-products">
+
+    <div class="small-container">
+
+        <div class="section-heading">
+            <h2 class="title1">Featured Products</h2>
+        </div>
+
+        <div class="row">
+
+            <!-- Product 1 -->
+
+            <div class="col-4">
+
+                <div class="product-card">
+
+                    <div class="product-img">
+
+                        <a href="productsdetail.html">
+                            <img src="images/product-1.jpg" alt="Red Printed T-Shirt">
+                        </a>
+
+                        <span class="product-badge">
+                            New
+                        </span>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h4>Red Printed T-Shirt</h4>
+
+                        <div class="rating">
+
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+
+                        </div>
+
+                        <div class="price">
+
+                            <span>$25.00</span>
+
+                        </div>
+
+                        <a href="#" class="product-btn">
+                            Add to Cart
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Product 2 -->
+
+            <div class="col-4">
+
+                <div class="product-card">
+
+                    <div class="product-img">
+
+                        <img src="images/product-2.jpg" alt="HRX Sports Shoes">
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h4>HRX Sports Shoes</h4>
+
+                        <div class="rating">
+
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+
+                        </div>
+
+                        <div class="price">
+
+                            <span>$45.00</span>
+
+                        </div>
+
+                        <a href="#" class="product-btn">
+                            Add to Cart
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Product 3 -->
+
+            <div class="col-4">
+
+                <div class="product-card">
+
+                    <div class="product-img">
+
+                        <img src="images/product-3.jpg" alt="HRX Gray Trackpants">
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h4>HRX Gray Trackpants</h4>
+
+                        <div class="rating">
+
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+
+                        </div>
+
+                        <div class="price">
+
+                            <span>$35.00</span>
+
+                        </div>
+
+                        <a href="#" class="product-btn">
+                            Add to Cart
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Product 4 -->
+
+            <div class="col-4">
+
+                <div class="product-card">
+
+                    <div class="product-img">
+
+                        <img src="images/product-4.jpg" alt="Blue Printed T-Shirt">
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h4>Blue Printed T-Shirt</h4>
+
+                        <div class="rating">
+
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+
+                        </div>
+
+                        <div class="price">
+
+                            <span>$60.00</span>
+
+                        </div>
+
+                        <a href="#" class="product-btn">
+                            Add to Cart
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================
+        Latest Products
+========================= -->
+
+<section class="latest-products">
+
+    <div class="section-heading">
+        <h2 class="title1">Latest Products</h2>
+
+    </div>
+
+    <div class="row">
+
+        <!-- Product 5 -->
+
+        <div class="col-4">
+
+            <div class="product-card">
+
+                <div class="product-img">
+
+                    <img src="images/product-5.jpg" alt="Puma Gray Sports Shoes">
+
+                    <span class="product-badge sale">
+                        Sale
+                    </span>
+
+                </div>
+
+                <div class="product-info">
+
+                    <h4>Puma Gray Sports Shoes</h4>
+
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <div class="price">$45.00</div>
+
+                    <a href="#" class="product-btn">
+                        Add to Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Product 6 -->
+
+        <div class="col-4">
+
+            <div class="product-card">
+
+                <div class="product-img">
+                    <img src="images/product-6.jpg" alt="Black Printed T-Shirt">
+                </div>
+
+                <div class="product-info">
+
+                    <h4>Black Printed T-Shirt</h4>
+
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <div class="price">$35.00</div>
+
+                    <a href="#" class="product-btn">
+                        Add to Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Product 7 -->
+
+        <div class="col-4">
+
+            <div class="product-card">
+
+                <div class="product-img">
+                    <img src="images/product-7.jpg" alt="HRX Set of 3 Socks">
+                </div>
+
+                <div class="product-info">
+
+                    <h4>HRX Set of 3 Socks</h4>
+
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <div class="price">$50.00</div>
+
+                    <a href="#" class="product-btn">
+                        Add to Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Product 8 -->
+
+        <div class="col-4">
+
+            <div class="product-card">
+
+                <div class="product-img">
+                    <img src="images/product-8.jpg" alt="Black Fossil Watch">
+                </div>
+
+                <div class="product-info">
+
+                    <h4>Black Fossil Watch</h4>
+
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <div class="price">$40.00</div>
+
+                    <a href="#" class="product-btn">
+                        Add to Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <!-- Product 9 -->
+
+        <div class="col-4">
+
+            <div class="product-card">
+
+                <div class="product-img">
+                    <img src="images/product-9.jpg" alt="Black Sportx Watch">
+                </div>
+
+                <div class="product-info">
+
+                    <h4>Black Sportx Watch</h4>
+
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <div class="price">$55.00</div>
+
+                    <a href="#" class="product-btn">
+                        Add to Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Product 10 -->
+
+        <div class="col-4">
+
+            <div class="product-card">
+
+                <div class="product-img">
+                    <img src="images/product-10.jpg" alt="Black HRX Shoes">
+                </div>
+
+                <div class="product-info">
+
+                    <h4>Black HRX Shoes</h4>
+
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <div class="price">$65.00</div>
+
+                    <a href="#" class="product-btn">
+                        Add to Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Product 11 -->
+
+        <div class="col-4">
+
+            <div class="product-card">
+
+                <div class="product-img">
+                    <img src="images/product-11.jpg" alt="Gray Nike Shoes">
+                </div>
+
+                <div class="product-info">
+
+                    <h4>Gray Nike Shoes</h4>
+
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <div class="price">$55.00</div>
+
+                    <a href="#" class="product-btn">
+                        Add to Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Product 12 -->
+
+        <div class="col-4">
+
+            <div class="product-card">
+
+                <div class="product-img">
+                    <img src="images/product-12.jpg" alt="HRX Black Trackpants">
+                </div>
+
+                <div class="product-info">
+
+                    <h4>HRX Black Trackpants</h4>
+
+                    <div class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+
+                    <div class="price">$75.00</div>
+
+                    <a href="#" class="product-btn">
+                        Add to Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!--=========================
+        OFFER SECTION
+==========================-->
+
+<section class="offer">
+
+    <div class="small-container">
+
+        <div class="row">
+
+            <!-- Left Side -->
+
+            <div class="col-2 offer-image">
+
+                <img
+                    src="images/exclusive.png"
+                    alt="Mi Smart Band 4"
+                    class="offer-img"
+                >
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="col-2 offer-content">
+
+                <span class="offer-tag">
+
+                    Exclusive Deal
+
+                </span>
+
+                <h2>
+
+                    Mi Smart Band 4
+
+                </h2>
+
+                <p class="offer-subtitle">
+
+                    Exclusively available on <strong>EliteStore</strong>
+
+                </p>
+
+                <p class="offer-description">
+
+                    Experience a larger AMOLED full-touch display,
+                    heart-rate monitoring, sleep tracking,
+                    activity tracking and up to 20 days of battery life.
+                    Stay fit, connected and motivated every day.
+
+                </p>
+
+                <div class="offer-price">
+
+                    <span class="old-price">
+
+                        $99
+
+                    </span>
+
+                    <span class="new-price">
+
+                        $69
+
+                    </span>
+
+                </div>
+
+                <a href="productsdetail.html" class="btn">
+
+                    Buy Now
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!--=========================
+      TESTIMONIAL SECTION
+==========================-->
+
+<section class="testimonial">
+
+    <div class="small-container">
+
+        <div class="section-heading">
+
+            <h2 class="title1">What Our Customers Say</h2>
+        </div>
+
+        <div class="row">
+
+            <!-- Testimonial 1 -->
+
+            <div class="col-3">
+
+                <div class="testimonial-card">
+
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+
+                    <p>
+                        Excellent quality and super fast delivery.
+                        The shoes are extremely comfortable and exactly
+                        as shown. Highly recommended!
+                    </p>
+
+                    <div class="rating">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+
+                    </div>
+
+                    <img src="images/user-1.png" alt="Jean Rose">
+
+                    <h3>Jean Rose</h3>
+
+                    <span>Verified Buyer</span>
+
+                </div>
+
+            </div>
+
+            <!-- Testimonial 2 -->
+
+            <div class="col-3">
+
+                <div class="testimonial-card">
+
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+
+                    <p>
+                        Amazing customer support and premium products.
+                        I have ordered multiple times and the experience
+                        has always been fantastic.
+                    </p>
+
+                    <div class="rating">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+                    <img src="images/user-2.png" alt="Walter White">
+
+                    <h3>Walter White</h3>
+
+                    <span>Verified Buyer</span>
+
+                </div>
+
+            </div>
+
+            <!-- Testimonial 3 -->
+
+            <div class="col-3">
+
+                <div class="testimonial-card">
+
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+
+                    <p>
+                        Great collection, affordable prices and beautiful
+                        packaging. Definitely my favorite online sports
+                        shopping store.
+                    </p>
+
+                    <div class="rating">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+
+                    </div>
+
+                    <img src="images/user-3.png" alt="Helen">
+
+                    <h3>Helen</h3>
+
+                    <span>Verified Buyer</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!--=========================
+        BRANDS SECTION
+==========================-->
+
+<section class="brands">
+
+    <div class="small-container">
+
+        <div class="section-heading">
+            <h2 class="title1">Trusted Brands</h2>
+        </div>
+
+        <div class="row">
+
+            <!-- Brand 1 -->
+
+            <div class="col-5">
+
+                <div class="brand-card">
+
+                    <img src="images/logo-godrej.png" alt="Godrej">
+
+                </div>
+
+            </div>
+
+            <!-- Brand 2 -->
+
+            <div class="col-5">
+
+                <div class="brand-card">
+
+                    <img src="images/logo-oppo.png" alt="Oppo">
+
+                </div>
+
+            </div>
+
+            <!-- Brand 3 -->
+
+            <div class="col-5">
+
+                <div class="brand-card">
+
+                    <img src="images/logo-coca-cola.png" alt="Coca Cola">
+
+                </div>
+
+            </div>
+
+            <!-- Brand 4 -->
+
+            <div class="col-5">
+
+                <div class="brand-card">
+
+                    <img src="images/logo-paypal.png" alt="PayPal">
+
+                </div>
+
+            </div>
+
+            <!-- Brand 5 -->
+
+            <div class="col-5">
+
+                <div class="brand-card">
+
+                    <img src="images/logo-philips.png" alt="Philips">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!--=========================
+        FOOTER SECTION
+==========================-->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- About -->
+
+            <div class="footer-col">
+
+                <h3>EliteStore</h3>
+
+                <p>
+                    Your one-stop destination for premium sportswear,
+                    footwear and accessories. Shop confidently with
+                    quality products and fast delivery.
+                </p>
+
+                <div class="social-icons">
+
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+
+                </div>
+
+            </div>
+
+            <!-- Quick Links -->
+
+            <div class="footer-col">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="products.html">Products</a></li>
+
+                    <li><a href="#">About Us</a></li>
+
+                    <li><a href="#">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Customer Support -->
+
+            <div class="footer-col">
+
+                <h3>Customer Support</h3>
+
+                <ul>
+
+                    <li><a href="#">FAQs</a></li>
+
+                    <li><a href="#">Shipping</a></li>
+
+                    <li><a href="#">Returns</a></li>
+
+                    <li><a href="#">Privacy Policy</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Download App -->
+
+            <div class="footer-col">
+
+                <h3>Download App</h3>
+
+                <p>
+
+                    Download our app for Android and iOS devices.
+
+                </p>
+
+                <div class="app-logo">
+
+                    <img src="images/play-store.png" alt="Play Store">
+
+                    <img src="images/app-store.png" alt="App Store">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © 2026 EliteStore. All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+    const cartOrder = document.querySelector(".cart-order");
+
+cartOrder.addEventListener("click", function () {
+
+    if (!this.classList.contains("animate")) {
+
+        this.classList.add("animate");
+
+        setTimeout(() => {
+            this.classList.remove("animate");
+        }, 10000);
+
+    }
+
+});
+
+const menuToggle = document.getElementById("menu-toggle");
+const navbar = document.getElementById("navbar");
+
+menuToggle.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+
+    if (navbar.classList.contains("active")) {
+        menuToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    } else {
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+});
+
+</script>
+
+</body>
+</html>

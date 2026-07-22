@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+<!--=========================
+        HEADER
+==========================-->
+
+<header class="header">
+    <!-- Navigation -->
+
+    <div class="container">
+
+        <nav class="nav">
+
+            <!-- Logo -->
+
+            <a href="index.html" class="logo">
+                Elite<span>Store</span>
+            </a>
+
+            <!-- Navigation -->
+
+            <div class="navbar" id="navbar">
+
+                <ul>
+
+                    <li><a class="active" href="index.html">Home</a></li>
+
+                    <li><a href="products.html">Products</a></li>
+
+                    <li><a href="#">About</a></li>
+
+                    <li><a href="#">Contact</a></li>
+
+                    <li><a href="#">Account</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Right Side -->
+
+            <div class="nav-right">
+
+                <!-- Cart -->
+
+                <div class="cart-icon">
+
+                    <button class="cart-order">
+
+                        <span class="cart-default">
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                        </span>
+
+                        <span class="cart-success">
+                            <i class="fa-solid fa-check"></i>
+                            <span class="success-text">
+                                Order Placed
+                            </span>
+                        </span>
+
+                        <div class="cart-box"></div>
+
+                        <div class="cart-truck">
+
+                            <div class="truck-back"></div>
+
+                            <div class="truck-front">
+                                <div class="truck-window"></div>
+                            </div>
+
+                            <div class="truck-light top"></div>
+                            <div class="truck-light bottom"></div>
+
+                        </div>
+
+                        <div class="cart-lines"></div>
+
+                    </button>
+
+                </div>
+
+                <!-- Hamburger -->
+
+                <button class="menu-toggle" id="menu-toggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<!--=========================
+      PRODUCT DETAILS
+==========================-->
+
+<section class="product-details">
+
+    <div class="small-container">
+
+        <div class="row">
+
+            <!-- Product Gallery -->
+
+            <div class="col-2">
+
+                <div class="product-gallery">
+
+                    <div class="main-image">
+
+                        <img src="images/gallery-1.jpg"
+                             id="ProductImg"
+                             alt="Red Printed T-Shirt">
+
+                        <span class="product-badge">
+                            Best Seller
+                        </span>
+
+                    </div>
+
+                    <div class="thumbnail-gallery">
+
+                        <div class="thumb">
+
+                            <img src="images/gallery-1.jpg"
+                                 class="small-img"
+                                 alt="Gallery Image">
+
+                        </div>
+
+                        <div class="thumb">
+
+                            <img src="images/gallery-2.jpg"
+                                 class="small-img"
+                                 alt="Gallery Image">
+
+                        </div>
+
+                        <div class="thumb">
+
+                            <img src="images/gallery-3.jpg"
+                                 class="small-img"
+                                 alt="Gallery Image">
+
+                        </div>
+
+                        <div class="thumb">
+
+                            <img src="images/gallery-4.jpg"
+                                 class="small-img"
+                                 alt="Gallery Image">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Product Information -->
+
+            <div class="col-2">
+
+                <div class="product-content">
+
+                    <span class="breadcrumb">
+
+                        Home /
+                        Clothing /
+                        T-Shirt
+
+                    </span>
+
+                    <h1>
+
+                        Red Printed T-Shirt by HRX
+
+                    </h1>
+
+                    <div class="rating">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+
+                        <span>(248 Reviews)</span>
+
+                    </div>
+
+                    <h2 class="product-price">
+
+                        ₹50.00
+
+                    </h2>
+
+                    <p class="product-description">
+
+                        Upgrade your wardrobe with this premium HRX
+                        printed T-shirt. Made from breathable cotton,
+                        it offers exceptional comfort for workouts,
+                        casual outings, and everyday wear.
+
+                    </p>
+
+                    <select>
+
+                        <option>Select Size</option>
+                        <option>XXL</option>
+                        <option>XL</option>
+                        <option>Large</option>
+                        <option>Medium</option>
+                        <option>Small</option>
+
+                    </select>
+
+                    <div class="product-actions">
+
+                        <input type="number"
+                               value="1"
+                               min="1">
+
+                        <a href="#"
+                           class="btn">
+
+                            Add to Cart
+
+                        </a>
+
+                    </div>
+
+                    <div class="product-meta">
+
+                        <p>
+
+                            <strong>Category:</strong>
+                            Clothing
+
+                        </p>
+
+                        <p>
+
+                            <strong>Availability:</strong>
+
+                            <span class="in-stock">
+
+                                In Stock
+
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!--=========================
+      RELATED PRODUCTS
+==========================-->
+
+<section class="related-products">
+
+    <div class="small-container">
+
+        <!-- Section Header -->
+
+        <div class="products-header">
+
+            <div>
+
+                <span class="section-tag">
+                    You May Also Like
+                </span>
+
+                <h2>Related Products</h2>
+
+                <p>
+                    Discover more premium products handpicked just for you.
+                </p>
+
+            </div>
+
+            <a href="products.html" class="view-all-btn">
+
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+        <!-- Products -->
+
+        <div class="row">
+
+            <!-- Product 1 -->
+
+            <div class="col-4">
+
+                <div class="product-card">
+
+                    <div class="product-img">
+
+                        <img src="images/product-9.jpg" alt="Black Sportx Watch">
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h4>Black Sportx Watch</h4>
+
+                        <div class="rating">
+
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+
+                        </div>
+
+                        <div class="price">
+
+                            ₹135.00
+
+                        </div>
+
+                        <a href="#" class="product-btn">
+
+                            Add to Cart
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Product 2 -->
+
+            <div class="col-4">
+
+                <div class="product-card">
+
+                    <div class="product-img">
+
+                        <img src="images/product-10.jpg" alt="Black HRX Shoes">
+
+                        <span class="product-badge">
+
+                            Hot
+
+                        </span>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h4>Black HRX Shoes</h4>
+
+                        <div class="rating">
+
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+
+                        </div>
+
+                        <div class="price">
+
+                            ₹50.00
+
+                        </div>
+
+                        <a href="#" class="product-btn">
+
+                            Add to Cart
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Product 3 -->
+
+            <div class="col-4">
+
+                <div class="product-card">
+
+                    <div class="product-img">
+
+                        <img src="images/product-11.jpg" alt="Gray Nike Shoes">
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h4>Gray Nike Shoes</h4>
+
+                        <div class="rating">
+
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+
+                        </div>
+
+                        <div class="price">
+
+                            ₹55.00
+
+                        </div>
+
+                        <a href="#" class="product-btn">
+
+                            Add to Cart
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Product 4 -->
+
+            <div class="col-4">
+
+                <div class="product-card">
+
+                    <div class="product-img">
+
+                        <img src="images/product-12.jpg" alt="HRX Black Trackpants">
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <h4>HRX Black Trackpants</h4>
+
+                        <div class="rating">
+
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+
+                        </div>
+
+                        <div class="price">
+
+                            ₹75.00
+
+                        </div>
+
+                        <a href="#" class="product-btn">
+
+                            Add to Cart
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--=========================
+        FOOTER SECTION
+==========================-->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- About -->
+
+            <div class="footer-col">
+
+                <h3>EliteStore</h3>
+
+                <p>
+                    Your one-stop destination for premium sportswear,
+                    footwear and accessories. Shop confidently with
+                    quality products and fast delivery.
+                </p>
+
+                <div class="social-icons">
+
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+
+                </div>
+
+            </div>
+
+            <!-- Quick Links -->
+
+            <div class="footer-col">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="products.html">Products</a></li>
+
+                    <li><a href="#">About Us</a></li>
+
+                    <li><a href="#">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Customer Support -->
+
+            <div class="footer-col">
+
+                <h3>Customer Support</h3>
+
+                <ul>
+
+                    <li><a href="#">FAQs</a></li>
+
+                    <li><a href="#">Shipping</a></li>
+
+                    <li><a href="#">Returns</a></li>
+
+                    <li><a href="#">Privacy Policy</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Download App -->
+
+            <div class="footer-col">
+
+                <h3>Download App</h3>
+
+                <p>
+
+                    Download our app for Android and iOS devices.
+
+                </p>
+
+                <div class="app-logo">
+
+                    <img src="images/play-store.png" alt="Play Store">
+
+                    <img src="images/app-store.png" alt="App Store">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © 2026 EliteStore. All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+    const cartOrder = document.querySelector(".cart-order");
+
+cartOrder.addEventListener("click", function () {
+
+    if (!this.classList.contains("animate")) {
+
+        this.classList.add("animate");
+
+        setTimeout(() => {
+            this.classList.remove("animate");
+        }, 10000);
+
+    }
+
+});
+
+const menuToggle = document.getElementById("menu-toggle");
+const navbar = document.getElementById("navbar");
+
+menuToggle.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+
+    if (navbar.classList.contains("active")) {
+        menuToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    } else {
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+});
+
+</script>
+
+</body>
+</html>

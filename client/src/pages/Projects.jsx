@@ -10,6 +10,7 @@ import schoolImage from "../assets/school.png";
 import excelImage from "../assets/excel.png";
 import blogImage from "../assets/blog.png";
 import saiImage from "../assets/sai.png";
+import clothingsImage from "../assets/cloths2.png";
 
 // videos
 import excelVideo from "../assets/excel.mp4";
@@ -52,6 +53,15 @@ const projects = [
     image: chatAiImage,
     link: "/projects/Chat Ai/index.html",
     overview: "Demo for an AI chatbot UI.",
+    tech: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    title: "Ecommerce Clothing Website",
+    type: "static",
+    category: "Static",
+    image: clothingsImage,
+    link: "/projects/Ecommerce website/index.html",
+    overview: "A modern e-commerce website for clothing.",
     tech: ["HTML", "CSS", "JavaScript"],
   },
 
